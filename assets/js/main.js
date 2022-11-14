@@ -35,5 +35,24 @@ function handleRedirect (){
 
 
 function getToken(code){
-    let body = code;
+    let body = 'grant_type=authorization_code';
+    body += '&code='+code;
+    body += '&redirecturi='+encodeURI('https://etgeorge.github.io/dig245-final/');
+    body += '&client_id' + clientId;
+    body += '&client_secret'+clientSecret;
+    fetchAuthorizationApi(body);
+}
+
+function fetchAuthorizationApi(body){
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://accounts.spotify.com/api/token?", true)
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.setRequestHeader('Authorization', 'Basic '+ btoa(clientId+":"+clientSecret));
+    xhr.send(body);
+    xhr.onload = handleAuthorizationResponse;
+}
+
+function handleAuthorizationResponse(){
+    var data = JSON.parse(this.responseText);
+    console.log(data);
 }
