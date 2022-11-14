@@ -1,6 +1,6 @@
 
 /* javascript */
-var authorized; 
+
 const getAuthorization = (function () {
     const clientId = '619dc4ae72bb482c9627b588fc4cba36';
     const clientSecret = '551dfacf8408410caf30a92880e99a1f';
@@ -11,7 +11,7 @@ const getAuthorization = (function () {
     url += '&redirect_uri=https://etgeorge.github.io/dig245-final/';
 
     window.location.href=url;
-    authorized = true;
+    
 });
 
 function getCode()  {
@@ -21,6 +21,8 @@ function getCode()  {
     if (searchQuery.length > 0){
         const urlParams = new URLSearchParams(searchQuery);
         code = urlParams.get('code');
+    } else {
+        getAuthorization();
     }
 
     return code;
