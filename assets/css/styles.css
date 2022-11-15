@@ -1,2 +1,17 @@
 
 /* css */
+
+.top-nav{
+    background-color: blueviolet;
+    width: 100%;
+    position: fixed;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.top-nav a{
+    color: white;
+}
+
