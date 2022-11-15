@@ -56,3 +56,5 @@ function handleAuthorizationResponse(){
     var data = JSON.parse(this.responseText);
     console.log(data);
 }
+
+handleRedirect();
