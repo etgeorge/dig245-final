@@ -37,7 +37,7 @@ function handleRedirect (){
 function getToken(code){
     let body = 'grant_type=authorization_code';
     body += '&code='+code;
-    body += '&redirecturi='+encodeURI('https://etgeorge.github.io/dig245-final/');
+    body += '&redirect_uri='+encodeURI('https://etgeorge.github.io/dig245-final/');
     body += '&client_id' + clientId;
     body += '&client_secret'+clientSecret;
     fetchAuthorizationApi(body);
