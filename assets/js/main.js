@@ -54,7 +54,7 @@ function fetchAuthorizationApi(body){
 
 function handleAuthorizationResponse(){
     var data = JSON.parse(this.responseText);
-    document.getElementById("result").innerHTML = "This token is: " + data.access_token;
+    document.getElementById("result").innerText = "This token is: " + data.access_token;
     console.log(data);
 }
 
