@@ -57,4 +57,3 @@ function handleAuthorizationResponse(){
     console.log(data);
 }
 
-handleRedirect();
