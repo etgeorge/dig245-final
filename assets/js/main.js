@@ -100,7 +100,7 @@ function loadExperience() {
 	$("#experience").show();
 	$("#introduction").hide();
 	$("#solutions").hide();
-    $('#query').hide();
+    
 }
 
 function loadIntroduction() {
