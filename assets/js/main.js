@@ -73,3 +73,29 @@ if (window.location.search.length  > 0){
     handleRedirect();
 }
 
+
+function loadExperience() {
+	console.log("Page loaded");
+	// hide / show sections
+	$("#experience").show();
+	$("#introduction").hide();
+	$("#solutions").hide();
+}
+
+function loadIntroduction() {
+	// hide / show sections
+	$("#experience").hide();
+	$("#introduction").show();
+	$("#solutions").hide();
+}
+
+function loadSolutions() {
+	// hide / show sections
+	$("#experience").hide();
+	$("#introduction").hide();
+	$("#solutions").show();
+}
+$(document).on("click", ".experience-btn", loadExperience);
+$(document).on("click", ".introduction-btn", loadIntroduction);
+$(document).on("click", ".solutions-btn", loadSolutions);
+
