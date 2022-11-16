@@ -74,6 +74,8 @@ if (window.location.search.length  > 0){
 }
 
 
+//SPA Functions
+
 function loadExperience() {
 	console.log("Page loaded");
 	// hide / show sections
