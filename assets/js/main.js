@@ -99,3 +99,4 @@ $(document).on("click", ".experience-btn", loadExperience);
 $(document).on("click", ".introduction-btn", loadIntroduction);
 $(document).on("click", ".solutions-btn", loadSolutions);
 
+loadIntroduction();
