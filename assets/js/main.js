@@ -77,7 +77,8 @@ function fetchPlaylistApi(body){
 
 function handlePlaylistResponse(){
     var data = JSON.parse(this.responseText);
-    console.log(data);
+    var firstPlaylist = data.items[0].name;
+    console.log(firstPlaylist);
 }
 
 function displayAnswer(){
