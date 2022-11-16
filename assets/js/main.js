@@ -3,6 +3,8 @@
 
 const clientId = '619dc4ae72bb482c9627b588fc4cba36';
 const clientSecret = '551dfacf8408410caf30a92880e99a1f';
+var access_token;
+var refresh_token;
 
 const getAuthorization = (function () {
     var url = 'https://accounts.spotify.com/authorize?'
@@ -58,6 +60,22 @@ function fetchAuthorizationApi(body){
 function handleAuthorizationResponse(){
     var data = JSON.parse(this.responseText);
     document.getElementById("result").innerText = "This token is: " + data.access_token;
+    access_token = data.access_token;
+    $('#query').show();
+}
+
+function fetchPlaylistApi(body){
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://api.spotify.com/v1/me/playlists?", true)
+    xhr.setRequestHeader('Accept', 'application/json')
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.setRequestHeader('Authorization', 'Bearer '+ access_token);
+    xhr.send(body);
+    xhr.onload = handlePlaylistResponse;
+}
+
+function handlePlaylistResponse(){
+    var data = JSON.parse(this.responseText);
     console.log(data);
 }
 
@@ -82,6 +100,7 @@ function loadExperience() {
 	$("#experience").show();
 	$("#introduction").hide();
 	$("#solutions").hide();
+    $('#query').hide();
 }
 
 function loadIntroduction() {
