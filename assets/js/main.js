@@ -90,6 +90,7 @@ function displayAnswer(){
 
 if (window.location.search.length  > 0){
     handleRedirect();
+    loadExperience();
 }
 
 
