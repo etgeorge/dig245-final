@@ -62,7 +62,7 @@ function handleAuthorizationResponse(){
     document.getElementById("result").innerText = "This token is: " + data.access_token;
     access_token = data.access_token;
     console.log(access_token);
-    $('#query').show();
+    
 }
 
 function fetchPlaylistApi(body){
