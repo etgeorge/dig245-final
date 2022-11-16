@@ -61,6 +61,7 @@ function handleAuthorizationResponse(){
     var data = JSON.parse(this.responseText);
     document.getElementById("result").innerText = "This token is: " + data.access_token;
     access_token = data.access_token;
+    console.log(access_token);
     $('#query').show();
 }
 
