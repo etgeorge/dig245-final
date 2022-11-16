@@ -28,6 +28,9 @@ function getCode()  {
     return code;
 }
 
+
+
+
 function handleRedirect (){
     let code = getCode();
     getToken(code);
@@ -64,5 +67,9 @@ function displayAnswer(){
     document.getElementById("answer").innerText = "You selected answer #" +result;
 
 
+}
+
+if (window.location.search.length  > 0){
+    handleRedirect();
 }
 
