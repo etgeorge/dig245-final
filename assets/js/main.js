@@ -58,3 +58,11 @@ function handleAuthorizationResponse(){
     console.log(data);
 }
 
+function displayAnswer(){
+    console.log("This worked")
+    let result = document.querySelector('input[name="flexRadioDefault"]:checked').value;
+    document.getElementById("answer").innerText = "You selected answer #" +result;
+
+
+}
+
