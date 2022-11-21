@@ -92,7 +92,7 @@ function displayAnswer(){
 if (window.location.search.length  > 0){
     handleRedirect();
     loadExperience();
-}
+} 
 
 
 //SPA Functions
@@ -103,7 +103,6 @@ function loadExperience() {
 	$("#experience").show();
 	$("#introduction").hide();
 	$("#solutions").hide();
-    
 }
 
 function loadIntroduction() {
@@ -111,6 +110,8 @@ function loadIntroduction() {
 	$("#experience").hide();
 	$("#introduction").show();
 	$("#solutions").hide();
+    window.history.replaceState(null, null, window.location.pathname);
+    
 }
 
 function loadSolutions() {
@@ -118,6 +119,9 @@ function loadSolutions() {
 	$("#experience").hide();
 	$("#introduction").hide();
 	$("#solutions").show();
+    window.history.replaceState(null, null, window.location.pathname);
+
+    
 }
 $(document).on("click", ".experience-btn", loadExperience);
 $(document).on("click", ".introduction-btn", loadIntroduction);
