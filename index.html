@@ -12,13 +12,38 @@
 </head>
 
 <body>
+	
 	<div class="top-nav">
-		<button class="experience-btn">Experience</button>
-		<button class="introduction-btn">Introduction</button>
-		<button class="solutions-btn">Solutions</button>
+		<button class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvas">Menu</button>
+		
 	</div>
+	<div class="empty-space"></div>
 	<br>
+	<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas">
+		<div class="offcanvas-header">
+			<h5 class="offcanvas-title">
+				Menu
+			</h5>
+			<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 
+		</div>
+		<div class="offcanvas-body">
+			<ul>
+				<li>
+					<button class="experience-btn">Experience</button>
+
+				</li>
+				<li>
+					<button class="introduction-btn">Introduction</button>
+
+				</li>
+				<li>
+					<button class="solutions-btn">Solutions</button>
+
+				</li>
+			</ul>
+		</div>
+	</div>
 	<div class="wrapper" id="experience">
 		<h1 id="title">Demystify Latest</h1>
 		<p id="result"></p>
@@ -27,7 +52,7 @@
 		<button onclick="fetchPlaylistApi()" id="query">Query API</button>
 		<p id="playlist-name"></p>
 		<div class="container">
-			<div class="card">
+			<div class="card" id="first">
 				<h5 class="card-title">How much money does Spotify pay per stream?</h5>
 				<form action="">
 					<div class="form-check">
@@ -55,6 +80,9 @@
 					<button type="button" class="btn btn-primary" onclick="displayAnswer()">Submit</button>
 					<card id="answer" class="body">Answer will appear here</card>
 				</form>
+			</div>
+			<div class="card" id="second">
+				<h5 class="card-title">Here is the second question</h5>
 			</div>
 		</div>
 	</div>

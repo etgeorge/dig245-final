@@ -5,6 +5,7 @@ const clientId = '619dc4ae72bb482c9627b588fc4cba36';
 const clientSecret = '551dfacf8408410caf30a92880e99a1f';
 var access_token;
 var refresh_token;
+var questionIdArray = ['first', 'second'];
 
 const getAuthorization = (function () {
     var url = 'https://accounts.spotify.com/authorize?'
@@ -85,7 +86,13 @@ function displayAnswer(){
     console.log("This worked")
     let result = document.querySelector('input[name="flexRadioDefault"]:checked').value;
     document.getElementById("answer").innerText = "You selected answer #" +result;
+    let currentQuestion = '#'+questionIdArray[0];
+    
+    $(currentQuestion).hide();
 
+    //display next question
+    questionIdArray.shift();
+    document.getElementById(questionIdArray[0]).show();
 
 }
 

@@ -2,12 +2,13 @@
 /* css */
 
 .top-nav{
-    background-color: blueviolet;
+    background-color: #FAF9F6;
     width: 100%;
+    height: 50px;
     position: fixed;
     color: white;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: end;
     
 }
 
@@ -17,6 +18,11 @@
 
 .top-nav a:active{
     background-color: aliceblue;
+}
+
+.empty-space{
+    height: 50px;
+    width: 100%;
 }
 
 
