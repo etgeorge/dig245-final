@@ -65,9 +65,11 @@ function handleAuthorizationResponse(){
     access_token = data.access_token;
     console.log(access_token);
     fetchPlaylistApi();
+    
 }
 
 function fetchPlaylistApi(body){
+    console.log("Trying to get playlist")
     let xhr = new XMLHttpRequest();
     xhr.open("GET", "https://api.spotify.com/v1/me/playlists?", true)
     xhr.setRequestHeader('Accept', 'application/json')
