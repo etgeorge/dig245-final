@@ -5,7 +5,6 @@ const clientId = '619dc4ae72bb482c9627b588fc4cba36';
 const clientSecret = '551dfacf8408410caf30a92880e99a1f';
 var access_token;
 var refresh_token;
-var authorized;
 var questionIdArray = ['first', 'second'];
 
 const getAuthorization = (function () {
@@ -101,7 +100,9 @@ function displayAnswer(){
 if (window.location.search.length  > 0){
     handleRedirect();
     loadExperience();
-} 
+} else{
+    loadIntroduction();
+}
 
 
 
@@ -137,10 +138,5 @@ $(document).on("click", ".experience-btn", loadExperience);
 $(document).on("click", ".introduction-btn", loadIntroduction);
 $(document).on("click", ".solutions-btn", loadSolutions);
 
-loadIntroduction();
 
-if (authorized){
-    fetchPlaylistApi();
-    loadExperience();
-    authorized = false;
-}
+
