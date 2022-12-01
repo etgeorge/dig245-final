@@ -83,6 +83,8 @@ function handlePlaylistResponse(){
     var data = JSON.parse(this.responseText);
     var firstPlaylist = data.items[0].name;
     console.log(firstPlaylist);
+    window.history.replaceState(null, null, window.location.pathname);
+
 }
 
 function displayAnswer(){
