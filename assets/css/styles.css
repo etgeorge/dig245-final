@@ -65,6 +65,15 @@ h1{
     font-weight: 900;
     font-size: 96px;
 }
+.btn-primary{
+    background-color: #EA526F;
+    color: #FAF9F6;
+    border-color: #EA526F;
+}
 
+.btn-primary:hover{
+    background-color: #dA425F;
+    border-color: #dA425F;
+}
 
 
