@@ -64,7 +64,7 @@ function handleAuthorizationResponse(){
     
     access_token = data.access_token;
     console.log(access_token);
-    
+    fetchPlaylistApi();
 }
 
 function fetchPlaylistApi(body){
