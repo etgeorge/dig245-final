@@ -9,16 +9,46 @@
 		integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 	<link rel="stylesheet" href="./assets/css/styles.css">
 	<title>dig245-final</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-	
+	<!-- Header and navigation -->
 	<div class="top-nav">
-		<button class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvas">Menu</button>
-		
+		<a data-bs-toggle="offcanvas" href="#offcanvas">
+			<svg width="45" height="29" viewBox="0 0 45 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<rect y="29" width="6.90476" height="44.1905" transform="rotate(-90 0 29)" fill="#2E294E" />
+				<rect y="17.9521" width="6.90476" height="44.1905" transform="rotate(-90 0 17.9521)" fill="#2E294E" />
+				<rect y="6.90479" width="6.90476" height="44.1905" transform="rotate(-90 0 6.90479)" fill="#2E294E" />
+			</svg>
+		</a>
 	</div>
 	<div class="empty-space"></div>
-	<br>
+
+	<div class="header image">
+		<svg width="161" height="234" viewBox="0 0 161 234" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<g clip-path="url(#clip0_83_341)">
+				<path
+					d="M80.5 0C41.7868 0 0 30.7564 0 80.4375C0 104.956 9.76245 125.585 28.5116 141.219C28.7092 141.468 28.9361 141.68 29.1849 141.862C43.0968 156.941 43.7993 159.807 43.8945 166.44C43.9384 169.065 43.9164 169.84 43.8945 170.264L43.8652 171.793C43.7554 175.098 43.5871 180.633 50.4442 182.725L109.678 195.748C109.941 195.807 110.205 195.836 110.461 195.836C112.144 195.836 113.659 194.673 114.032 192.962C114.471 190.988 113.22 189.035 111.244 188.604L52.2957 175.654C51.1614 175.31 51.0663 175.281 51.1687 172.012L51.1907 170.615C51.1907 170.615 51.2639 170.045 51.2053 166.33C51.0663 157.051 49.0465 152.568 34.3076 136.649C34.0222 136.298 33.6783 136.005 33.2977 135.786C16.0561 121.139 7.31818 102.521 7.31818 80.4375C7.31818 35.2682 45.2995 7.3125 80.5 7.3125C116.476 7.3125 153.682 34.6686 153.682 80.4375C153.682 109.527 139.572 125.563 127.936 135.654C127.534 135.844 127.175 136.115 126.861 136.451C111.954 152.568 109.934 157.051 109.795 166.33C109.795 166.55 109.787 166.805 109.795 167.083L109.787 167.339C109.765 167.895 109.685 168.202 109.692 168.319C109.443 168.283 108.836 168.188 108.836 168.188L78.1362 160.97C76.1457 160.517 74.199 161.731 73.738 163.69C73.277 165.657 74.4918 167.624 76.4604 168.092L106.787 175.2C107.189 175.346 110.834 176.531 113.907 174.374C115.247 173.431 116.805 171.58 117.084 168.041L117.106 167.698C117.113 167.464 117.12 167.222 117.12 166.974C117.12 166.908 117.12 166.842 117.113 166.784L117.12 166.447C117.215 159.851 117.903 156.985 131.793 141.906C131.859 141.855 131.932 141.804 131.991 141.746C151.508 125.358 161 105.3 161 80.4375C161 30.0909 120.069 0 80.5 0Z"
+					fill="#2E294E" />
+				<path
+					d="M109.773 215.719C111.448 215.719 112.956 214.571 113.336 212.867C113.79 210.9 112.553 208.94 110.578 208.494L52.0321 195.229C50.0488 194.791 48.1022 196.019 47.6558 197.986C47.2021 199.953 48.4388 201.913 50.4147 202.359L108.96 215.624C109.238 215.69 109.509 215.719 109.773 215.719Z"
+					fill="#2E294E" />
+				<path
+					d="M55.684 216.114C53.7008 215.675 51.7615 216.911 51.3078 218.878C50.8687 220.852 52.1054 222.805 54.0813 223.244L101.65 233.905C101.928 233.971 102.191 234 102.455 234C104.13 234 105.645 232.845 106.026 231.141C106.465 229.167 105.228 227.214 103.252 226.775L55.684 216.114Z"
+					fill="#2E294E" />
+			</g>
+			<defs>
+				<clipPath id="clip0_83_341">
+					<rect width="161" height="234" fill="white" />
+				</clipPath>
+			</defs>
+		</svg>
+
+	</div>
+	<!-- Hamburger menu -->
 	<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas">
 		<div class="offcanvas-header">
 			<h5 class="offcanvas-title">
@@ -45,7 +75,11 @@
 		</div>
 	</div>
 	<div class="wrapper" id="experience">
-		<h1 id="title">Demystify Latest</h1>
+		<div class="header text">
+			<h1 class="title">
+				Experience
+			</h1>
+		</div>
 		<p id="result"></p>
 
 		<button onclick="handleRedirect()">Authorize</button>
@@ -88,19 +122,44 @@
 	</div>
 
 	<div class="wrapper" id="introduction">
-		<h1>Introduction</h1>
-
-	<div class="container">
-		<div class="card">
-			<h5 class="card-title">What is Demystify?</h5>
-			<p class="card-body">This project is meant to make clear or <em>demystify</em> the money
-            flow of streaming services.</p>
+		<div class="header text">
+			<h1 class="title">
+				Demystify
+			</h1>
 		</div>
-	</div>
+
+		
+			<div class="container-fluid introduction-body">
+				<div class="container">
+					<div class="row">
+						<div class="col-7">
+							<h2>A little about ourselves</h2>
+						</div>
+						
+						<div class="col-5 statistics">
+							<div class="row">
+								<div class="col-5 offset-2">
+									Big text
+								</div>
+							</div> 
+							<div class="row">
+								BIG TEXT
+							</div> 
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		
+		
 	</div>
 
 	<div class="wrapper" id="solutions">
-		<h1>Solutions</h1>
+		<div class="header text">
+			<h1 class="title">
+				Solutions
+			</h1>
+		</div>
 	</div>
 
 

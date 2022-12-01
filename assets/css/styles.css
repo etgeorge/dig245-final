@@ -1,6 +1,11 @@
 
 /* css */
-
+body{
+    background-color: #2E294E;
+    font-family: 'Lato', sans-serif;
+    color: #FAF9F6;
+    
+}
 .top-nav{
     background-color: #FAF9F6;
     width: 100%;
@@ -10,10 +15,15 @@
     display: flex;
     justify-content: end;
     
+    
+}
+.statistics{
+    background-color: #EA526F;
 }
 
 .top-nav a{
     color: white;
+    margin: 15px;
 }
 
 .top-nav a:active{
@@ -23,6 +33,32 @@
 .empty-space{
     height: 50px;
     width: 100%;
+}
+.title{
+    margin: 15px;
+}
+
+.header{
+    width: 100%;
+    background-color: #FAF9F6;
+    display: flex;
+    color: #2E294E;
+}
+
+.image{
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+}
+.text{
+    height: 100px;
+    align-items: end;
+    
+}
+
+h1{
+    font-weight: 900;
+    font-size: 96px;
 }
 
 
