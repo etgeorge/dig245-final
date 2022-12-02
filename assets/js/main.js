@@ -85,6 +85,7 @@ function handlePlaylistResponse(){
     var firstPlaylist = data.items[0].name;
     console.log(firstPlaylist);
     window.history.replaceState(null, null, window.location.pathname);
+    scrollBy(0,20);
     //call the next question
     displayPlaylistAnswer(firstPlaylist);
 }
