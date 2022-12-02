@@ -6,6 +6,7 @@ const clientSecret = '551dfacf8408410caf30a92880e99a1f';
 var access_token;
 var refresh_token;
 var questionIdArray = ['first', 'second'];
+var answerArray = ['This is the * answer']
 
 const getAuthorization = (function () {
     var url = 'https://accounts.spotify.com/authorize?'
@@ -90,6 +91,7 @@ function handlePlaylistResponse(){
 
 function displayPlaylistAnswer(playlist){
     $('#playlist').text("Your most recently created playlist is "+playlist);
+    $('#next-question').show();
 }
 
 function displayAnswer(){
