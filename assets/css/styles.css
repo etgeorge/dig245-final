@@ -100,3 +100,15 @@ h1{
 .offcanvas-body{
     padding: 0;
 }
+
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: #FAF9F6;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+.completed{
+    background-color: #EA526F;
+}
