@@ -120,6 +120,10 @@ function getNextQuestion(){
     $(dotSelector).addClass("complete");
 }
 
+function skipAuthorize(){
+    $("#authorize").hide();
+    getNextQuestion();
+}
 
 if (window.location.search.length  > 0){
     handleRedirect();
