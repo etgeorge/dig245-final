@@ -5,7 +5,8 @@ const clientId = '619dc4ae72bb482c9627b588fc4cba36';
 const clientSecret = '551dfacf8408410caf30a92880e99a1f';
 var access_token;
 var refresh_token;
-var questionIdArray = ['first', 'second'];
+var questionIndex = 0;
+var questionArray = ["How old are you?"];
 var answerArray = ['This is the * answer']
 
 const getAuthorization = (function () {
@@ -108,6 +109,13 @@ function displayAnswer(){
     document.getElementById(questionIdArray[0]).show();
 
 }
+
+function getNextQuestion(){
+    document.getElementById("question").innerText = questionArray[questionIndex];
+    questionIndex++;
+    $("#next-question").hide();
+}
+
 
 if (window.location.search.length  > 0){
     handleRedirect();
