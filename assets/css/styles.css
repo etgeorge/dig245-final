@@ -50,6 +50,13 @@ body{
     color: #2E294E;
 }
 
+a{
+    color: #EA526F;
+}
+a:hover{
+    color: #dA425F;
+}
+
 .image{
     height: 400px;
     justify-content: center;
