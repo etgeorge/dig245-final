@@ -94,6 +94,7 @@ function handlePlaylistResponse(){
 function displayPlaylistAnswer(playlist){
     $('#playlist').text("Your most recently created playlist is "+playlist);
     $('#next-question').show();
+    $('#authorize').hide();
 }
 
 function displayAnswer(){
