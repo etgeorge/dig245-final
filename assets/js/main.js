@@ -116,7 +116,7 @@ function getNextQuestion(){
     questionIndex++;
     $("#next-question").hide();
 
-    var dotSelector = 'dot-'+questionIndex;
+    var dotSelector = '#dot-'+questionIndex;
     $(dotSelector).addClass("complete");
 }
 
