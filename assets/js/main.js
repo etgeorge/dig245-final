@@ -114,6 +114,9 @@ function getNextQuestion(){
     document.getElementById("question").innerText = questionArray[questionIndex];
     questionIndex++;
     $("#next-question").hide();
+
+    var dotSelector = 'dot-'+questionIndex;
+    $(dotSelector).addClass("complete");
 }
 
 
