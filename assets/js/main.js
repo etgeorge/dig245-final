@@ -6,8 +6,8 @@ const clientSecret = '551dfacf8408410caf30a92880e99a1f';
 var access_token;
 var refresh_token;
 var questionIndex = 0;
-var questionArray = ["How old are you?"];
-var answerArray = ['This is the * answer']
+var questionArray = ["How old are you?", "what is your name?", "what is your quest?"];
+var answerArray = ["","You selected * as your answer"]
 
 const getAuthorization = (function () {
     var url = 'https://accounts.spotify.com/authorize?'
@@ -117,12 +117,32 @@ function getNextQuestion(){
     $("#next-question").hide();
 
     var dotSelector = '#dot-'+questionIndex;
-    $(dotSelector).addClass("complete");
+    console.log(dotSelector);
+    $(dotSelector).addClass("completed");
+}
+
+function revealAnswer(){
+    let result = document.querySelector('input[name="flexRadioDefault"]:checked').value;
+    $("#answers").hide("fade");
+    
+
+    console.log(answerArray[questionIndex])
+    var answer = "";
+    for(let char of answerArray[questionIndex]){
+        if (char == '*'){
+            answer+= result;
+        } else {
+            answer+=char;
+        }
+    }
+    console.log(answer);
+    document.getElementById("question").innerText = answer;
+
 }
 
 function skipAuthorize(){
     console.log("skip called");
-    $("#authorize").hide();
+    $("#authorize").hide("fade");
     getNextQuestion();
 }
 

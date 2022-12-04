@@ -61,7 +61,7 @@ body{
     
 }
 
-h1{
+h1, .stat{
     font-weight: 900;
     font-size: 96px;
 }
@@ -112,3 +112,9 @@ h1{
 .completed{
     background-color: #EA526F;
 }
+
+.stat-caption{
+    font-size: 28px;
+    font-weight: 400;
+}
+

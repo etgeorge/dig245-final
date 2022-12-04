@@ -83,7 +83,25 @@
 						your data through Spotify's Web API?</p>
 					<button id="authorize" class="btn btn-primary" onclick="handleRedirect()">Authorize</button>
 					<p id="playlist"></p>
+					<div id="answers">
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="flexRadioDefault" id="day" value="day">
+							<label class="form-check-label" for="day">
+							  Day
+							</label>
+						
+							
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="flexRadioDefault" id="year" value="year">
+							<label class="form-check-label" for="year">
+							  Year
+							</label>
+						</div>
+					</div>
+					
 					<div>
+						<button class="btn btn-primary" onclick="revealAnswer()">Submit</button>
 						<button class="btn btn-primary" onclick="getNextQuestion()" id="next-question">Next question</button>
 					</div>
 					<span class="dot completed"></span>
@@ -116,17 +134,32 @@
 				<div class="row">
 					<div class="col-7">
 						<h2>A little about ourselves</h2>
+						<p>The modern music industry is dominated by streaming services. Artists trade small payout per track for the
+							ability to reach the widest audience ever. This formula heavily favors established artists signed to major 
+							record labels who can rely on millions of streams on top of merchandise, tours, and other deals. Smaller 
+							artists are left to collect spare change. How can we change this? What can you do to help? </p>
 					</div>
 
 					<div class="col-5 statistics">
 						<div class="row">
-							<div class="col-5 offset-2">
-								Big text
+							<div class="col-8 offset-2">
+								<div class="stat">8400</div>
+								<p>of all music revenue comes from streaming services</p>
 							</div>
 						</div>
 						<div class="row">
-							BIG TEXT
+							<div class="col-8 offset-2">
+								<div class="stat">1000</div>
+								<p>artists earned over 1 million dollars from Spotify in 2021</p>
+							</div>
 						</div>
+						<div class="row">
+							<div class="col-8 offset-2">
+								<div class="stat">5300</div>
+								<p>artists who earned $10,000 and released their first song in the past 2 years</p>
+							</div>
+						</div>
+						
 					</div>
 				</div>
 			</div>
