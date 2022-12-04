@@ -121,6 +121,7 @@ function getNextQuestion(){
 }
 
 function skipAuthorize(){
+    console.log("skip called");
     $("#authorize").hide();
     getNextQuestion();
 }
