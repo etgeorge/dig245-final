@@ -6,8 +6,10 @@ const clientSecret = '551dfacf8408410caf30a92880e99a1f';
 var access_token;
 var refresh_token;
 var questionIndex = 0;
-var questionArray = ["How old are you?", "what is your name?", "what is your quest?"];
-var answerArray = ["","You selected * as your answer"]
+var questionArray = ["Spotify offers a flat rate payout per stream to artists.", "Which answer is NOT a current demand of Spotify from musicians?", "what is your quest?"];
+var answerArray = ["", `Spotify pays less than a cent per stream. The average payout is $0.004 per stream and depends on the distribution contract each artist has, the country of the listener, and whether the listener is a Free or Premium subscriber. This small number often needs to be divided further by record labels and managers attached to artists.
+`,`Artists are demanding all of the above EXCEPT the sale of digital albums. Artists are not opposed to streaming as a means of music consumption, but demand that rates are about 3x as high as they are now. For artists, it is still a great idea to release digital albums on sites such as Bandcamp to give fans the opportunity to support more directly.`
+]
 
 const getAuthorization = (function () {
     var url = 'https://accounts.spotify.com/authorize?'
@@ -15,15 +17,15 @@ const getAuthorization = (function () {
     url += '&response_type=code';
     url += '&redirect_uri=https://etgeorge.github.io/dig245-final/';
 
-    window.location.href=url;
-    
+    window.location.href = url;
+
 });
 
-function getCode()  {
+function getCode() {
     let code = null;
     const searchQuery = window.location.search;
 
-    if (searchQuery.length > 0){
+    if (searchQuery.length > 0) {
         const urlParams = new URLSearchParams(searchQuery);
         code = urlParams.get('code');
     } else {
@@ -37,72 +39,72 @@ function getCode()  {
 
 
 
-function handleRedirect (){
+function handleRedirect() {
     let code = getCode();
     getToken(code);
 }
 
 
-function getToken(code){
+function getToken(code) {
     let body = 'grant_type=authorization_code';
-    body += '&code='+code;
-    body += '&redirect_uri='+encodeURI('https://etgeorge.github.io/dig245-final/');
+    body += '&code=' + code;
+    body += '&redirect_uri=' + encodeURI('https://etgeorge.github.io/dig245-final/');
     body += '&client_id' + clientId;
-    body += '&client_secret'+clientSecret;
+    body += '&client_secret' + clientSecret;
     fetchAuthorizationApi(body);
 }
 
-function fetchAuthorizationApi(body){
+function fetchAuthorizationApi(body) {
     let xhr = new XMLHttpRequest();
     xhr.open("POST", "https://accounts.spotify.com/api/token?", true)
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.setRequestHeader('Authorization', 'Basic '+ btoa(clientId+":"+clientSecret));
+    xhr.setRequestHeader('Authorization', 'Basic ' + btoa(clientId + ":" + clientSecret));
     xhr.send(body);
     xhr.onload = handleAuthorizationResponse;
 }
 
-function handleAuthorizationResponse(){
+function handleAuthorizationResponse() {
     var data = JSON.parse(this.responseText);
-    
+
     access_token = data.access_token;
     console.log(access_token);
     fetchPlaylistApi();
-    
+
 }
 
-function fetchPlaylistApi(body){
+function fetchPlaylistApi(body) {
     console.log("Trying to get playlist")
     let xhr = new XMLHttpRequest();
     xhr.open("GET", "https://api.spotify.com/v1/me/playlists?", true)
     xhr.setRequestHeader('Accept', 'application/json')
     xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.setRequestHeader('Authorization', 'Bearer '+ access_token);
+    xhr.setRequestHeader('Authorization', 'Bearer ' + access_token);
     xhr.send(body);
     xhr.onload = handlePlaylistResponse;
 }
 
-function handlePlaylistResponse(){
+function handlePlaylistResponse() {
     var data = JSON.parse(this.responseText);
     var firstPlaylist = data.items[0].name;
     console.log(firstPlaylist);
     window.history.replaceState(null, null, window.location.pathname);
-    scrollBy(0,450);
+    scrollBy(0, 450);
     //call the next question
     displayPlaylistAnswer(firstPlaylist);
 }
 
-function displayPlaylistAnswer(playlist){
-    $('#playlist').text("Your most recently created playlist is "+playlist);
+function displayPlaylistAnswer(playlist) {
+    $('#playlist').text("Your most recently created playlist is " + playlist);
     $('#next-question').show();
     $('#authorize').hide();
 }
 
-function displayAnswer(){
+function displayAnswer() {
     console.log("This worked")
     let result = document.querySelector('input[name="flexRadioDefault"]:checked').value;
-    document.getElementById("answer").innerText = "You selected answer #" +result;
-    let currentQuestion = '#'+questionIdArray[0];
-    
+    document.getElementById("answer").innerText = "You selected answer #" + result;
+    let currentQuestion = '#' + questionIdArray[0];
+
     $(currentQuestion).hide();
 
     //display next question
@@ -111,45 +113,55 @@ function displayAnswer(){
 
 }
 
-function getNextQuestion(){
+function getNextQuestion() {
     document.getElementById("question").innerText = questionArray[questionIndex];
     questionIndex++;
     $("#next-question").hide();
-
-    var dotSelector = '#dot-'+questionIndex;
+    getNextAnswer();
+    $('#reveal-answer').show("fade");
+    var dotSelector = '#dot-' + questionIndex;
     console.log(dotSelector);
     $(dotSelector).addClass("completed");
 }
 
-function revealAnswer(){
-    let result = document.querySelector('input[name="flexRadioDefault"]:checked').value;
-    $("#answers").hide("fade");
-    
-
-    console.log(answerArray[questionIndex])
-    var answer = "";
-    for(let char of answerArray[questionIndex]){
-        if (char == '*'){
-            answer+= result;
-        } else {
-            answer+=char;
-        }
-    }
-    console.log(answer);
-    document.getElementById("question").innerText = answer;
-
+function getNextAnswer(){
+    let answerSelector="#answers-"+questionIndex;
+    console.log(answerSelector);
+    $(answerSelector).show("fade");
 }
 
-function skipAuthorize(){
+function revealAnswer() {
+    let result = document.querySelector('input[name="flexRadioDefault"]:checked').value;
+    let answerSelector="#answers-"+questionIndex;
+    $(answerSelector).hide("fade");
+
+
+    console.log(answerArray[questionIndex])
+    var answer;
+    if (result=="true"){
+        answer = "Correct! "
+    } else{
+        answer = "Close! "
+    }
+    answer+=answerArray[questionIndex];
+    console.log(answer);
+    document.getElementById("question").innerText = answer;
+    $('#reveal-answer').hide();
+    $("#next-question").show();
+}
+
+function skipAuthorize() {
     console.log("skip called");
     $("#authorize").hide("fade");
     getNextQuestion();
+    
+    
 }
 
-if (window.location.search.length  > 0){
+if (window.location.search.length > 0) {
     handleRedirect();
     loadExperience();
-} else{
+} else {
     loadIntroduction();
 }
 
@@ -158,30 +170,30 @@ if (window.location.search.length  > 0){
 //SPA Functions
 
 function loadExperience() {
-	console.log("Page loaded");
-	// hide / show sections
-	$("#experience").show();
-	$("#introduction").hide();
-	$("#solutions").hide();
+    console.log("Page loaded");
+    // hide / show sections
+    $("#experience").show();
+    $("#introduction").hide();
+    $("#solutions").hide();
 }
 
 function loadIntroduction() {
-	// hide / show sections
-	$("#experience").hide();
-	$("#introduction").show();
-	$("#solutions").hide();
+    // hide / show sections
+    $("#experience").hide();
+    $("#introduction").show();
+    $("#solutions").hide();
     window.history.replaceState(null, null, window.location.pathname);
-    
+
 }
 
 function loadSolutions() {
-	// hide / show sections
-	$("#experience").hide();
-	$("#introduction").hide();
-	$("#solutions").show();
+    // hide / show sections
+    $("#experience").hide();
+    $("#introduction").hide();
+    $("#solutions").show();
     window.history.replaceState(null, null, window.location.pathname);
 
-    
+
 }
 $(document).on("click", ".experience-btn", loadExperience);
 $(document).on("click", ".introduction-btn", loadIntroduction);
