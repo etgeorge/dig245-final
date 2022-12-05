@@ -119,6 +119,7 @@ function getNextQuestion() {
     $("#next-question").hide();
     getNextAnswer();
     $('#reveal-answer').show("fade");
+    $("#skip").show("fade");
     var dotSelector = '#dot-' + questionIndex;
     console.log(dotSelector);
     $(dotSelector).addClass("completed");
@@ -148,6 +149,7 @@ function revealAnswer() {
     document.getElementById("question").innerText = answer;
     $('#reveal-answer').hide();
     $("#next-question").show();
+    $("#skip").hide();
 }
 
 function skipAuthorize() {

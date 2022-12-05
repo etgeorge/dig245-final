@@ -18,7 +18,7 @@ body{
     
 }
 .tab{
-    height: 400px;
+    height: 460px;
     width: 100%;
 }
 .statistics{
@@ -42,7 +42,11 @@ body{
     margin: 15px;
     z-index: 100;
 }
-#reveal-answer, #next-question{
+
+h2, h3{
+    margin: 15px 0;
+}
+#reveal-answer, #next-question, #question, .dots{
     margin: 15px;
 }
 .header{
@@ -83,6 +87,9 @@ h1, .stat{
 .btn-primary:hover{
     background-color: #dA425F;
     border-color: #dA425F;
+}
+.answer,.next-answer{
+    margin: 15px;
 }
 
 

@@ -70,20 +70,17 @@
 				Experience
 			</h1>
 		</div>
-		<!-- <p id="result"></p> -->
-
-
-		<!-- <p id="playlist-name"></p> -->
+		
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-5">
 					<h2>Learn about the industry in an interactive experience</h2>
-					<button onclick="skipAuthorize()">Skip</button>
 					<p id="question">We want to get some data on playlists we have created with your Spotify account. Can we access
 						your data through Spotify's Web API?</p>
 					<button id="authorize" class="btn btn-primary" onclick="handleRedirect()">Authorize</button>
 					<p id="playlist"></p>
-					<div id="answers-1">
+					<!-- Answers -->
+					<div id="answers-1" class="answer">
 						<div class="form-check">
 							<input class="form-check-input" type="radio" name="flexRadioDefault" id="true" value="true">
 							<label class="form-check-label" for="true">
@@ -130,11 +127,16 @@
 						<button class="btn btn-primary" onclick="revealAnswer()" id="reveal-answer">Submit</button>
 						<button class="btn btn-primary" onclick="getNextQuestion()" id="next-question">Next question</button>
 					</div>
-					<span class="dot completed"></span>
+					<!-- Progress dots -->
+					<div class="dots">
+						<span class="dot completed"></span>
 					<span id="dot-1" class="dot"></span>
 					<span id="dot-2" class="dot"></span>
 					<span id="dot-3" class="dot"></span>
 					<span id="dot-4" class="dot"></span>
+					<button class="btn btn-primary btn-small" id="skip" onclick="skipAuthorize()">Skip</button>
+					</div>
+					
 				</div>
 
 				<div class="col-6"></div>
@@ -160,11 +162,19 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-7">
-						<h2>The goal of this project</h2>
-						<p>The modern music industry is dominated by streaming services. Artists trade small payout per track for the
-							ability to reach the widest audience ever. This formula heavily favors established artists signed to major 
-							record labels who can rely on millions of streams on top of merchandise, tours, and other deals. Smaller 
-							artists are left to collect spare change. How can we change this? What can you do to help? </p>
+						<h2>The concept</h2>
+						<p>If you remotely follow music related news, you probably have seen Spotify criticized for many reasons in the late 2010s. This website brings together information from many sources to make a case against this narrative that Spotify paints: they
+							are the saviors of the music industry. Spotify claims that when piracy was rampant, streaming came in and gave the power back
+							to the musicians. The reality is far from this. They make it as difficult as possible (see <a href="https://www.spotifyunwrapped.org/">this</a>)
+							to gather information that contradicts this. Use this web app as an easy tool to learn and spread the truth about Spotify.
+						</p>
+						<h2>The content</h2>
+						<p>This website is designed to deliver information in a straightforward and engaging fashion. Head over to
+							the Experience page to take an enlightening quiz on the state of the music industry. Visit the Solutions page
+							if you are curious about what actions you can take today to encourage positive change. Or stay here and continue reading
+							to further understand the main issues that Spotify perpetuates.
+						 </p>
+						<h2>Lack of compensation</h2>
 						<h2>The death of the album</h2>
 						<p>With streaming servies, artists receive a payment based on market share of track plays and other factors.
 							This encourages artists to pump out weekly tracks to keep their listener base stimulated with new content
@@ -172,8 +182,12 @@
 							to take time to invest an a longer project. The result: artists are no longer willing or able to have
 							musical projects that span themes and achieve nuance.
 						</p>
-						<h2>My stake in the issue</h2>
-						<p>I am a musician who really values the music industry</p>
+						<h2>Spotify's hypocrisy</h2>
+						<p>Spotify and other streaming services have poured millions of dollars into appealing
+							a 44% raise in mechanical songwriter royalty payments. It is impossible to advertise themselves
+							as a platform supporting artists if they are actively trying to minimize how much they have to shell out
+							to musicians. Instead Spotify treats this like any other company cost: one that should be kept as low as possible.
+						</p>
 						<h2>Contents of this project</h2>
 						<p>On the experience page, I encourage you to follow through a small quiz I have 
 							created as an easy way to learn about some misconceptions you may have about
@@ -182,9 +196,16 @@
 						<p>On the solutions page, I give some brief suggestions on how you can help out 
 							music artists today.
 						</p>
+						<h2>Works Cited</h2>
+						<ul>
+							<li><a href="https://blog.hudlmusic.com/songwriters-vs-streaming-services-what-you-need-to-know/#What_Can_You_Do">Hudl Blog</a></li>
+							<li><a href="https://www.unionofmusicians.org/justice-at-spotify">Justice at Spotify</a></li>
+							<li></li>
+						</ul>
 					</div>
+					<div class="col-1"></div>
 
-					<div class="col-5 statistics">
+					<div class="col-4 statistics">
 						<div class="row">
 							<div class="col-8 offset-2">
 								<div class="stat">84%</div>
@@ -225,15 +246,18 @@
 			</h1>
 		</div>
 
-		<div class="container-fluid">
+		<div class="container">
 			<div class="row">
-				<div class="col-5">
+				<div class="col-6">
 					<h2>For listeners...</h2>
 					<p>There are many alternatives to using Spotify. Other streaming services, like
 						Tidal, provide higher quality audio and better payout to artists. Websites like
 						<a href="https://bandcamp.com/">Bandcamp</a> let you buy digital albums from many
 						smaller artists. 
 					</p>
+					
+				</div>
+				<div class="col-6">
 					<h2>For artists...</h2>
 					<p>Consider alternatives to streaming services for spreading your music. Social media 
 						apps such as Instagram and TikTok allow artists to reach a wide variety of audiences
