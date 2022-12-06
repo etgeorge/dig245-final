@@ -87,17 +87,19 @@ function fetchPlaylistApi(body) {
 
 function handlePlaylistResponse() {
     var data = JSON.parse(this.responseText);
-    var firstPlaylist = data.items[0].name;
+    var firstPlaylist = data.items[2].name;
+    var firstPlaylistLength = data.items[2].tracks.total;
     console.log(data);
     console.log(firstPlaylist);
     window.history.replaceState(null, null, window.location.pathname);
     scrollBy(0, 450);
     //call the next question
-    displayPlaylistAnswer(firstPlaylist);
+    displayPlaylistAnswer(firstPlaylist, firstPlaylistLength);
 }
 
-function displayPlaylistAnswer(playlist) {
-    $('#playlist').text("Your most recently created playlist is " + playlist);
+function displayPlaylistAnswer(playlist, length) {
+    $('#playlist').text("One of your recent playlists is " + playlist +" which is "+length+
+    " tracks long. This playlist would cost you $"+length*0.99+" to create by purchasing each track individuallly. Compare this to the $10 a month it costs to create an unlimited number of these playlists.");
     $('#next-question').show();
     $('#authorize').hide();
 }
