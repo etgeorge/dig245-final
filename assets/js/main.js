@@ -134,13 +134,14 @@ function getNextAnswer(){
     let answerSelector="#answers-"+questionIndex;
     console.log(answerSelector);
     $(answerSelector).show("fade");
+    $("#playlist").hide("fade");
 }
 
 function revealAnswer() {
     let result = document.querySelector('input[name="flexRadioDefault"]:checked').value;
     let answerSelector="#answers-"+questionIndex;
     $(answerSelector).hide("fade");
-    $("#playlist").hide("fade");
+    
 
 
     console.log(answerArray[questionIndex])
