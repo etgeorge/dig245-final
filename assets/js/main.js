@@ -104,7 +104,7 @@ function displayPlaylistAnswer(playlist, length) {
     $('#authorize').hide();
 }
 
-function getNextQuestion() {
+function skipToNextQuestion() {
     document.getElementById("question").innerText = questionArray[questionIndex];
     questionIndex++;
     $("#next-question").hide();
@@ -114,6 +114,25 @@ function getNextQuestion() {
     var dotSelector = '#dot-' + questionIndex;
     console.log(dotSelector);
     $(dotSelector).addClass("completed");
+    
+}
+
+function getNextQuestion(){
+    skipToNextQuestion();
+    reverseColors();
+}
+
+function animateColors(){
+    $("#next-question").addClass("pink-to-purple");
+    $(".completed").addClass("pink-to-purple")
+    $("body").addClass("purple-to-pink");
+    
+}
+
+function reverseColors(){
+    $("#next-question").removeClass("pink-to-purple");
+    $(".completed").removeClass("pink-to-purple")
+    $("body").removeClass("purple-to-pink");
 }
 
 function getNextAnswer(){
@@ -128,15 +147,10 @@ function revealAnswer() {
     let result = document.querySelector(questionSelector).value;
     
     
-    if(result == null){
-        return;
-    }
+
 
     let answerSelector="#answers-"+questionIndex;
     $(answerSelector).hide("fade");
-    
-
-
     
     var answer;
     if (result=="true"){
@@ -147,9 +161,14 @@ function revealAnswer() {
     answer+=answerArray[questionIndex];
     result= null;
     document.getElementById("question").innerText = answer;
+    
+    //DOM manipulation
     $('#reveal-answer').hide();
     $("#next-question").show();
     $("#skip").hide();
+
+    //animations
+    animateColors();
 }
 
 function skipAuthorize() {
@@ -157,7 +176,7 @@ function skipAuthorize() {
     $("#authorize").hide("fade");
     let answerSelector="#answers-"+questionIndex;
     $(answerSelector).hide("fade");
-    getNextQuestion();
+    skipToNextQuestion();
     
     
 }

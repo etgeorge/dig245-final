@@ -38,6 +38,28 @@ body{
     display: none;
 }
 
+@keyframes purp{
+    from{background-color: #2E294E;}
+    to{background-color: #EA526F;}
+}
+
+@keyframes pnk{
+    from{background-color: #EA526F;}
+    to{background-color: #2E294E;}  
+}
+
+.purple-to-pink{
+    animation-name: purp;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.pink-to-purple{
+    animation-name: pnk;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
 .empty-space{
     height: 50px;
     width: 100%;
