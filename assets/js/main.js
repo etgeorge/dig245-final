@@ -135,7 +135,7 @@ function revealAnswer() {
     
 
 
-    console.log(answerArray[questionIndex])
+    
     var answer;
     if (result=="true"){
         answer = "Correct! "
