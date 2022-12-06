@@ -104,21 +104,6 @@ function displayPlaylistAnswer(playlist, length) {
     $('#authorize').hide();
 }
 
-function displayAnswer() {
-    console.log("This worked")
-    let result = document.querySelector('input[name="flexRadioDefault"]:checked').value;
-    console.log(result)
-    document.getElementById("answer").innerText = "You selected answer #" + result;
-    let currentQuestion = '#' + questionIdArray[0];
-
-    $(currentQuestion).hide();
-
-    //display next question
-    questionIdArray.shift();
-    document.getElementById(questionIdArray[0]).show();
-
-}
-
 function getNextQuestion() {
     document.getElementById("question").innerText = questionArray[questionIndex];
     questionIndex++;
@@ -140,6 +125,11 @@ function getNextAnswer(){
 
 function revealAnswer() {
     let result = document.querySelector('input[name="flexRadioDefault"]:checked').value;
+    console.log(result);
+    if(result == null){
+        return;
+    }
+
     let answerSelector="#answers-"+questionIndex;
     $(answerSelector).hide("fade");
     
