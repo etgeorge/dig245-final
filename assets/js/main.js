@@ -5,6 +5,7 @@ const clientId = '619dc4ae72bb482c9627b588fc4cba36';
 const clientSecret = '551dfacf8408410caf30a92880e99a1f';
 var access_token;
 var refresh_token;
+const LAST_QUESTION = 4;
 var questionIndex = 0;
 var questionArray = ["Spotify offers a flat rate payout per stream to artists.", "Which answer is NOT a current demand of Spotify from musicians?", "Which major record labels own sizable shares of Spotify stock?", "Spotify's total artist payout has increased each year."];
 var answerArray = ["", `Spotify pays less than a cent per stream. The average payout is $0.004 per stream and depends on the distribution contract each artist has, the country of the listener, and whether the listener is a Free or Premium subscriber. This small number often needs to be divided further by record labels and managers attached to artists.
@@ -118,8 +119,19 @@ function skipToNextQuestion() {
 }
 
 function getNextQuestion(){
-    skipToNextQuestion();
+    if (questionIndex == LAST_QUESTION){
+        finishQuiz();
+    } else{
+        skipToNextQuestion();
+        reverseColors();
+    }
+    
+}
+
+function finishQuiz(){
     reverseColors();
+    $("#next-question").hide("fade");
+    document.getElementById("question").innerText = "Thanks for playing"
 }
 
 function animateColors(){
@@ -145,10 +157,6 @@ function getNextAnswer(){
 function revealAnswer() {
     var questionSelector = 'input[name="question-'+questionIndex+'"]:checked';
     let result = document.querySelector(questionSelector).value;
-    
-    
-
-
     let answerSelector="#answers-"+questionIndex;
     $(answerSelector).hide("fade");
     
@@ -176,8 +184,13 @@ function skipAuthorize() {
     $("#authorize").hide("fade");
     let answerSelector="#answers-"+questionIndex;
     $(answerSelector).hide("fade");
-    skipToNextQuestion();
-    
+    if(questionIndex == LAST_QUESTION){
+        finishQuiz();
+        $("#reveal-answer").hide("fade");
+        $("#skip").hide("fade");
+    } else{
+        skipToNextQuestion();
+    }
     
 }
 
