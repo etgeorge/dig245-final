@@ -138,6 +138,7 @@ function revealAnswer() {
     let result = document.querySelector('input[name="flexRadioDefault"]:checked').value;
     let answerSelector="#answers-"+questionIndex;
     $(answerSelector).hide("fade");
+    $("#playlist").hide("fade");
 
 
     console.log(answerArray[questionIndex])
