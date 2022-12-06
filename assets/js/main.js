@@ -107,6 +107,7 @@ function displayPlaylistAnswer(playlist, length) {
 function displayAnswer() {
     console.log("This worked")
     let result = document.querySelector('input[name="flexRadioDefault"]:checked').value;
+    console.log(result)
     document.getElementById("answer").innerText = "You selected answer #" + result;
     let currentQuestion = '#' + questionIdArray[0];
 
