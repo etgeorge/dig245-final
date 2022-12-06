@@ -34,6 +34,10 @@ body{
     background-color: aliceblue;
 }
 
+#reveal-answer,#answers-1{
+    display: none;
+}
+
 .empty-space{
     height: 50px;
     width: 100%;
