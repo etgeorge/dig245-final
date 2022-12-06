@@ -6,9 +6,11 @@ const clientSecret = '551dfacf8408410caf30a92880e99a1f';
 var access_token;
 var refresh_token;
 var questionIndex = 0;
-var questionArray = ["Spotify offers a flat rate payout per stream to artists.", "Which answer is NOT a current demand of Spotify from musicians?", "what is your quest?"];
+var questionArray = ["Spotify offers a flat rate payout per stream to artists.", "Which answer is NOT a current demand of Spotify from musicians?", "Which major record labels own sizable shares of Spotify stock?", "Spotify's total artist payout has increased each year."];
 var answerArray = ["", `Spotify pays less than a cent per stream. The average payout is $0.004 per stream and depends on the distribution contract each artist has, the country of the listener, and whether the listener is a Free or Premium subscriber. This small number often needs to be divided further by record labels and managers attached to artists.
-`,`Artists are demanding all of the above EXCEPT the sale of digital albums. Artists are not opposed to streaming as a means of music consumption, but demand that rates are about 3x as high as they are now. For artists, it is still a great idea to release digital albums on sites such as Bandcamp to give fans the opportunity to support more directly.`
+`,`Artists are demanding all of the above EXCEPT the sale of digital albums. Artists are not opposed to streaming as a means of music consumption, but demand that rates are about 3x as high as they are now. For artists, it is still a great idea to release digital albums on sites such as Bandcamp to give fans the opportunity to support more directly.`,
+`Sony and UMG still own stock in Spotify. These record labels are set up to succeed either way. If Spotify continues to take a huge cut of subscription and ad revenue, this increases the value of their stock. If Spotify starts to take less money, the record labels get more money from their artist agreements. Either way, their vested interests give them the upper hand over the artists and lets Spotify's treatment of artists run unchecked. `,
+`While this is true, it is not as good as it seems. From 2017 to 2021, artists receiving 1 million dollars rose from 720 to 1040 (44% increase). During this same time, the number of premium subscription users rose from 124 million to 188 million (51% increase). While Spotify boasts about being the first to pay billions of dollars out to rights holders, this can only be expected as their users increase as well. Not to mention that these billions are reaching rights holders, which means music artists are only getting a fraction of this big number.`
 ]
 
 const getAuthorization = (function () {
