@@ -155,6 +155,8 @@ function revealAnswer() {
 function skipAuthorize() {
     console.log("skip called");
     $("#authorize").hide("fade");
+    let answerSelector="#answers-"+questionIndex;
+    $(answerSelector).hide("fade");
     getNextQuestion();
     
     

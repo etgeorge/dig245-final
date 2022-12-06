@@ -55,7 +55,7 @@ p{
 h2, h3{
     margin: 15px 0;
 }
-#reveal-answer, #next-question, #question, .dots{
+#reveal-answer, #next-question, #question, .dots, #authorize{
     margin: 15px;
 }
 .header{
