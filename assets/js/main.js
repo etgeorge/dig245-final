@@ -124,8 +124,10 @@ function getNextAnswer(){
 }
 
 function revealAnswer() {
-    let result = document.querySelector('input[name="flexRadioDefault"]:checked').value;
-    console.log(result);
+    var questionSelector = 'input[name="question-'+questionIndex+'"]:checked';
+    let result = document.querySelector(questionSelector).value;
+    
+    
     if(result == null){
         return;
     }
@@ -143,7 +145,7 @@ function revealAnswer() {
         answer = "Close! "
     }
     answer+=answerArray[questionIndex];
-    console.log(answer);
+    result= null;
     document.getElementById("question").innerText = answer;
     $('#reveal-answer').hide();
     $("#next-question").show();
