@@ -71,6 +71,8 @@ function handleAuthorizationResponse() {
 
     access_token = data.access_token;
     console.log(access_token);
+
+    //if token not received then handle that 
     fetchPlaylistApi();
 
 }
@@ -87,6 +89,7 @@ function fetchPlaylistApi(body) {
 }
 
 function handlePlaylistResponse() {
+    //issue with this line
     var data = JSON.parse(this.responseText);
     var firstPlaylist = data.items[2].name;
     var firstPlaylistLength = data.items[2].tracks.total;
