@@ -137,7 +137,7 @@ function getNextQuestion(){
 function finishQuiz(){
     reverseColors();
     $("#next-question").hide("fade");
-    document.getElementById("question").innerText = "Thanks for playing"
+    document.getElementById("question").innerText = "Explore other pages for more information!"
 }
 
 function animateColors(){
