@@ -185,8 +185,7 @@ h1, .stat{
     background-color: #EA526F;
 }
 
-.stat-caption{
-    font-size: 28px;
-    font-weight: 400;
+.caption{
+    margin-top: -15px;
 }
 
