@@ -43,11 +43,36 @@ body{
     to{background-color: #EA526F;}
 }
 
-@keyframes pnk{
-    from{background-color: #EA526F;}
-    to{background-color: #2E294E;}  
+@keyframes correct{
+    from{background-color: #2E294E;}
+    to{background-color: green;}
 }
 
+@keyframes incorrect{
+    from{background-color: #2E294E;}
+    to{background-color: red;}
+}
+
+@keyframes pnk{
+    from{background-color: #EA526F;
+        border-color: #EA526F;
+    }
+    to{background-color: #2E294E;
+    border-color: #2E294E;}  
+    
+}
+
+.correct{
+    animation-name: correct;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.incorrect{
+    animation-name: incorrect;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
 .purple-to-pink{
     animation-name: purp;
     animation-duration: 1s;

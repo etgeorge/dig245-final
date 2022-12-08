@@ -140,14 +140,23 @@ function finishQuiz(){
 function animateColors(){
     $("#next-question").addClass("pink-to-purple");
     $(".completed").addClass("pink-to-purple")
-    $("body").addClass("purple-to-pink");
+    var questionSelector = 'input[name="question-'+questionIndex+'"]:checked';
+    let result = document.querySelector(questionSelector).value;
+    
+    if(result == "true"){
+        $("body").addClass("correct")
+    } else{
+        $("body").addClass("incorrect")
+
+    }
     
 }
 
 function reverseColors(){
     $("#next-question").removeClass("pink-to-purple");
     $(".completed").removeClass("pink-to-purple")
-    $("body").removeClass("purple-to-pink");
+    $("body").removeClass("correct");
+    $("body").removeClass("incorrect");
 }
 
 function getNextAnswer(){
