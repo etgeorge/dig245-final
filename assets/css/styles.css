@@ -195,7 +195,19 @@ h1, .stat{
     align-items: center;
     justify-content: center;
 }
+#skip{
+    height: 50%;
+    
+}
+.question-area{
+    height: 300px;
+}
 
+.status-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .caption{
     margin-top: -10px;
     width: 100%;

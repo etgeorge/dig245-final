@@ -75,7 +75,8 @@
 			<div class="row">
 				<div class="col-sm-2 col-md-3"></div>
 				<div class="col-sm-8 col-md-6">
-					<h2 class="subtitle">Demystify the industry...</h2>
+					<div class="question-area">
+						<h2 class="subtitle">Demystify the industry...</h2>
 					<p id="question">We want to get some data on playlists we have created with your Spotify account. Can we access
 						your data through Spotify's Web API?</p>
 					<button id="authorize" class="btn btn-primary" onclick="handleRedirect()">Authorize</button>
@@ -174,20 +175,23 @@
 						<button class="btn btn-primary" onclick="revealAnswer()" id="reveal-answer">Submit</button>
 						<button class="btn btn-primary" onclick="getNextQuestion()" id="next-question">Next question</button>
 					</div>
+					</div>
+					
 					<!-- Progress dots -->
-					<div class="dots">
-						<span class="dot completed"></span>
-					<span id="dot-1" class="dot"></span>
-					<span id="dot-2" class="dot"></span>
-					<span id="dot-3" class="dot"></span>
-					<span id="dot-4" class="dot"></span>
-					<button class="btn btn-primary btn-small" id="skip" onclick="skipAuthorize()">Skip</button>
+					<div class="status-bar">
+						<div class="dots">
+							<span class="dot completed"></span>
+						<span id="dot-1" class="dot"></span>
+						<span id="dot-2" class="dot"></span>
+						<span id="dot-3" class="dot"></span>
+						<span id="dot-4" class="dot"></span>
+						</div>
+						
+						<button class="btn btn-primary" id="skip" onclick="skipAuthorize()">Skip</button>
 					</div>
 					
 				</div>
-				<div class="row empty-space large">
-
-				</div>
+				
 
 				<div class="col-sm-2 col-md-3"></div>
 				
