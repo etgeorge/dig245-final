@@ -119,6 +119,7 @@ function skipToNextQuestion() {
     console.log(dotSelector);
     $(dotSelector).addClass("completed");
     
+    
 }
 
 function getNextQuestion(){
@@ -127,6 +128,8 @@ function getNextQuestion(){
     } else{
         skipToNextQuestion();
         reverseColors();
+        
+
     }
     
 }

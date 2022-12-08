@@ -89,6 +89,10 @@ body{
     height: 50px;
     width: 100%;
 }
+
+.large{
+    height: 175px;
+}
 .title{
     margin: 15px;
     z-index: 100;
@@ -144,7 +148,7 @@ h1, .stat{
     background-color: #dA425F;
     border-color: #dA425F;
 }
-.answer,.next-answer{
+.answer,.next-answer, .subtitle{
     margin: 15px;
 }
 
