@@ -14,6 +14,7 @@ body{
     color: white;
     display: flex;
     justify-content: end;
+    z-index: 99;
     
     
 }
@@ -88,6 +89,12 @@ body{
 .empty-space{
     height: 50px;
     width: 100%;
+}
+
+.carousel-item{
+    height: 200px;
+    width: 100%;
+    background-color: #EA526F;
 }
 
 .large{
@@ -185,6 +192,6 @@ h1, .stat{
 }
 
 .caption{
-    margin-top: -15px;
+    margin-top: -10px;
 }
 
