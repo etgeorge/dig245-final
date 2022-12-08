@@ -97,12 +97,7 @@ body{
     margin: 15px;
     z-index: 100;
 }
-h2{
-    font-size: 3vw;
-}
-p{
-    font-size: 1.2vw;
-}
+
 h2, h3{
     margin: 15px 0;
 }
@@ -136,7 +131,7 @@ a:hover{
 
 h1, .stat{
     font-weight: 900;
-    font-size: 7vw;
+    
 }
 .btn-primary{
     background-color: #EA526F;
