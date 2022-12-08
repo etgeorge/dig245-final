@@ -190,8 +190,14 @@ h1, .stat{
 .completed{
     background-color: #EA526F;
 }
+.centered{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .caption{
     margin-top: -10px;
+    width: 50%;
 }
 
