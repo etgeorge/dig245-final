@@ -168,6 +168,10 @@ h1, .stat{
     background-color: #FAF9F6;
 }
 
+.display-3{
+    text-align: center;
+}
+
 .experience-btn, .introduction-btn, .solutions-btn{
     height: 150px;
     width: 100%;
