@@ -104,6 +104,11 @@ body{
     margin: 15px;
     z-index: 100;
 }
+.icon{
+    fill: #EA526F;
+    display: flex;
+    justify-content: center;
+}
 
 h2, h3{
     margin: 15px 0;
@@ -190,9 +195,15 @@ h1, .stat{
 .completed{
     background-color: #EA526F;
 }
+
+.landing-card{
+    margin: 120px 0px;
+    
+}
 .centered{
     display: flex;
     align-items: center;
+    
     justify-content: center;
 }
 #skip{

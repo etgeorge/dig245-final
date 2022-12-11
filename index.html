@@ -63,322 +63,502 @@
 			<button class="btn solutions-btn" data-bs-dismiss="offcanvas">Solutions</button>
 		</div>
 	</div>
-	<!-- Experience page -->
-	<div class="wrapper" id="experience">
-		<div class="header text">
-			<h1 class="display-1 title">
-				Experience
-			</h1>
-		</div>
-		
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-sm-2 col-md-3"></div>
-				<div class="col-sm-8 col-md-6">
-					<div class="question-area">
-						<h2 class="subtitle">Demystify the industry...</h2>
-					<p id="question">We want to get some data on playlists we have created with your Spotify account. Can we access
-						your data through Spotify's Web API?</p>
-					<button id="authorize" class="btn btn-primary" onclick="handleRedirect()">Authorize</button>
-					<p id="playlist"></p>
-					<!-- Answers -->
-					<div id="answers-1" class="answer">
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="question-1" id="true" value="false">
-							<label class="form-check-label" for="true">
-							  True
-							</label>
-						</div>
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="question-1" id="false" value="true">
-							<label class="form-check-label" for="false">
-							  False
-							</label>
-						</div>
-					</div>
-					<div id="answers-2" class="next-answer">
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="question-2" id="cent" value="false">
-							<label class="form-check-label" for="cent">
-								To be paid at least one cent per stream
-							</label>
-						
-							
-						</div>
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="question-2" id="model" value="false">
-							<label class="form-check-label" for="model">
-								To adopt a user-centric payment model
-							</label>
-						</div>
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="question-2" id="digital" value="true">
-							<label class="form-check-label" for="digital">
-								To start selling digital albums on Spotify 
-							</label>
-						</div>
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="question-2" id="contracts" value="false">
-							<label class="form-check-label" for="contracts">
-								To make all closed-door contracts public 
-
-							</label>
-						</div>
-					</div>
-					<div id="answers-3" class="next-answer">
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="question-3" id="sony" value="true">
-							<label class="form-check-label" for="sony">
-								Sony and Universal Music Group
-							</label>
-						
-							
-						</div>
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="question-3" id="merlin" value="false">
-							<label class="form-check-label" for="merlin">
-								Merlin and Sony
-							</label>
-						</div>
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="question-3" id="warner" value="false">
-							<label class="form-check-label" for="warner">
-								Warner and Sony
-							</label>
-						</div>
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="question-3" id="none" value="false">
-							<label class="form-check-label" for="none">
-								No major record label owns stock in Spotify
-
-							</label>
-						</div>
-					</div>
-					<div id="answers-4" class="next-answer">
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="question-4" id="yes" value="true">
-							<label class="form-check-label" for="yes">
-								True
-							</label>
-						
-							
-						</div>
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="question-4" id="no" value="false">
-							<label class="form-check-label" for="no">
-								False
-							</label>
-						</div>
-						
-					</div>
-					<div>
-						<button class="btn btn-primary" onclick="revealAnswer()" id="reveal-answer">Submit</button>
-						<button class="btn btn-primary" onclick="getNextQuestion()" id="next-question">Next question</button>
-					</div>
-					</div>
-					
-					<!-- Progress dots -->
-					<div class="status-bar">
-						<div class="dots">
-							<span class="dot completed"></span>
-						<span id="dot-1" class="dot"></span>
-						<span id="dot-2" class="dot"></span>
-						<span id="dot-3" class="dot"></span>
-						<span id="dot-4" class="dot"></span>
-						</div>
-						
-						<button class="btn btn-primary" id="skip" onclick="skipAuthorize()">Skip</button>
-					</div>
-					
-				</div>
-				
-
-				<div class="col-sm-2 col-md-3"></div>
-				
-			</div>
 
 
-		</div>
-	</div>
+	<!-- Landing page -->
 
-	<!-- Introduction page -->
-	<div class="wrapper" id="introduction">
+	<div class="wrapper" id="landing">
 		<div class="header text">
 			<h1 class="display-1 title">
 				Demystify
 			</h1>
 		</div>
 
-		<div class="container-fluid introduction-body">
-			<div class="container">
+		<div class="container-fluid">
+
+			<div class="row landing-card">
+				<div class="col-6">
+					<div class="centered">
+						<h2 class="display-3">
+							What is this?
+						</h2>
+					</div>
+					<div class="centered">
+						<button class="btn btn-primary" onclick="loadIntroduction()">
+							Learn here
+						</button>
+					</div>
+
+				</div>
+				<div class="col-6">
+					<div class="icon">
+						<?xml version="1.0" encoding="utf-8"?><svg version="1.1" id="Layer_1"
+							xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+							y="0px" viewBox="0 0 122.88 101.37" width="150" height="150"
+							style="enable-background:new 0 0 122.88 101.37" xml:space="preserve">
+							<g>
+								<path
+									d="M12.64,77.27l0.31-54.92h-6.2v69.88c8.52-2.2,17.07-3.6,25.68-3.66c7.95-0.05,15.9,1.06,23.87,3.76 c-4.95-4.01-10.47-6.96-16.36-8.88c-7.42-2.42-15.44-3.22-23.66-2.52c-1.86,0.15-3.48-1.23-3.64-3.08 C12.62,77.65,12.62,77.46,12.64,77.27L12.64,77.27z M103.62,19.48c-0.02-0.16-0.04-0.33-0.04-0.51c0-0.17,0.01-0.34,0.04-0.51V7.34 c-7.8-0.74-15.84,0.12-22.86,2.78c-6.56,2.49-12.22,6.58-15.9,12.44V85.9c5.72-3.82,11.57-6.96,17.58-9.1 c6.85-2.44,13.89-3.6,21.18-3.02V19.48L103.62,19.48z M110.37,15.6h9.14c1.86,0,3.37,1.51,3.37,3.37v77.66 c0,1.86-1.51,3.37-3.37,3.37c-0.38,0-0.75-0.06-1.09-0.18c-9.4-2.69-18.74-4.48-27.99-4.54c-9.02-0.06-18.03,1.53-27.08,5.52 c-0.56,0.37-1.23,0.57-1.92,0.56c-0.68,0.01-1.35-0.19-1.92-0.56c-9.04-4-18.06-5.58-27.08-5.52c-9.25,0.06-18.58,1.85-27.99,4.54 c-0.34,0.12-0.71,0.18-1.09,0.18C1.51,100.01,0,98.5,0,96.64V18.97c0-1.86,1.51-3.37,3.37-3.37h9.61l0.06-11.26 c0.01-1.62,1.15-2.96,2.68-3.28l0,0c8.87-1.85,19.65-1.39,29.1,2.23c6.53,2.5,12.46,6.49,16.79,12.25 c4.37-5.37,10.21-9.23,16.78-11.72c8.98-3.41,19.34-4.23,29.09-2.8c1.68,0.24,2.88,1.69,2.88,3.33h0V15.6L110.37,15.6z M68.13,91.82c7.45-2.34,14.89-3.3,22.33-3.26c8.61,0.05,17.16,1.46,25.68,3.66V22.35h-5.77v55.22c0,1.86-1.51,3.37-3.37,3.37 c-0.27,0-0.53-0.03-0.78-0.09c-7.38-1.16-14.53-0.2-21.51,2.29C79.09,85.15,73.57,88.15,68.13,91.82L68.13,91.82z M58.12,85.25 V22.46c-3.53-6.23-9.24-10.4-15.69-12.87c-7.31-2.8-15.52-3.43-22.68-2.41l-0.38,66.81c7.81-0.28,15.45,0.71,22.64,3.06 C47.73,78.91,53.15,81.64,58.12,85.25L58.12,85.25z" />
+							</g>
+						</svg>
+					</div>
+				</div>
+			</div>
+			<div class="row landing-card">
+				<div class="col-6">
+					<div class="icon">
+						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="150" width="150"
+							viewBox="0 0 502 502" style="enable-background:new 0 0 502 502;" xml:space="preserve">
+							<g>
+								<g>
+									<g>
+										<path d="M431,0H71c-5.522,0-10,4.477-10,10v482c0,5.523,4.478,10,10,10h360c5.522,0,10-4.477,10-10V10C441,4.477,436.522,0,431,0
+				z M421,482H81V20h340V482z" />
+										<path d="M126,165h87c5.522,0,10-4.477,10-10V68c0-5.523-4.478-10-10-10h-87c-5.522,0-10,4.477-10,10v87
+				C116,160.523,120.478,165,126,165z M136,78h67v67h-67V78z" />
+										<path d="M126,306h87c5.522,0,10-4.477,10-10v-19c0-5.523-4.478-10-10-10c-5.522,0-10,4.477-10,10v9h-67v-67h62
+				c5.522,0,10-4.477,10-10s-4.478-10-10-10h-72c-5.522,0-10,4.477-10,10v87C116,301.523,120.478,306,126,306z" />
+										<path d="M126,446h87c5.522,0,10-4.477,10-10v-87c0-5.523-4.478-10-10-10h-87c-5.522,0-10,4.477-10,10v87
+				C116,441.523,120.478,446,126,446z M136,359h67v67h-67V359z" />
+										<path
+											d="M327,99h50c5.522,0,10-4.477,10-10s-4.478-10-10-10h-50c-5.522,0-10,4.477-10,10S321.478,99,327,99z" />
+										<path
+											d="M268,99h17c5.522,0,10-4.477,10-10s-4.478-10-10-10h-17c-5.522,0-10,4.477-10,10S262.478,99,268,99z" />
+										<path
+											d="M268,140h109c5.522,0,10-4.477,10-10s-4.478-10-10-10H268c-5.522,0-10,4.477-10,10S262.478,140,268,140z" />
+										<path
+											d="M377,221h-50c-5.522,0-10,4.477-10,10s4.478,10,10,10h50c5.522,0,10-4.477,10-10S382.522,221,377,221z" />
+										<path
+											d="M268,241h17c5.522,0,10-4.477,10-10s-4.478-10-10-10h-17c-5.522,0-10,4.477-10,10S262.478,241,268,241z" />
+										<path
+											d="M268,282h109c5.522,0,10-4.477,10-10s-4.478-10-10-10H268c-5.522,0-10,4.477-10,10S262.478,282,268,282z" />
+										<path
+											d="M377,360h-50c-5.522,0-10,4.477-10,10s4.478,10,10,10h50c5.522,0,10-4.477,10-10S382.522,360,377,360z" />
+										<path
+											d="M268,380h17c5.522,0,10-4.477,10-10s-4.478-10-10-10h-17c-5.522,0-10,4.477-10,10S262.478,380,268,380z" />
+										<path
+											d="M268,421h109c5.522,0,10-4.477,10-10s-4.478-10-10-10H268c-5.522,0-10,4.477-10,10S262.478,421,268,421z" />
+										<path d="M161.907,236.27c-3.991-3.815-10.323-3.672-14.138,0.321c-3.816,3.993-3.672,10.323,0.321,14.139l25.339,24.341
+				c1.953,1.953,4.512,2.929,7.071,2.929s5.118-0.976,7.071-2.929l59.5-59.5c3.905-3.905,3.905-10.237,0-14.143
+				c-3.906-3.905-10.236-3.905-14.143,0l-52.52,52.52L161.907,236.27z" />
+									</g>
+								</g>
+							</g>
+						</svg>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="centered">
+						<h2 class="display-3">
+							Want to dive right in?
+						</h2>
+					</div>
+					
+					<div class="centered">
+						<button class="btn btn-primary" onclick="loadExperience()">
+							Take the quiz
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="row landing-page">
+				<div class="col-6">
+					<div class="centered">
+						<h2 class="display-3 centered">
+							A person of action?
+						</h2>
+					</div>
+					<div class="centered">
+						<button class="btn btn-primary" onclick="loadSolutions()">
+							Help today
+						</button>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="icon">
+						<svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="150px"
+							height="150px">
+							<path
+								d="M 11 1 C 9.3550302 1 8 2.3550302 8 4 L 4 4 C 2.9069372 4 2 4.9069372 2 6 L 2 12 L 4 12 C 4.5650302 12 5 12.43497 5 13 C 5 13.56503 4.5650302 14 4 14 L 2 14 L 2 20 C 2 21.093063 2.9069372 22 4 22 L 10 22 L 10 20 C 10 19.43497 10.43497 19 11 19 C 11.56503 19 12 19.43497 12 20 L 12 22 L 18 22 C 19.093063 22 20 21.093063 20 20 L 20 16 C 21.64497 16 23 14.64497 23 13 C 23 11.35503 21.64497 10 20 10 L 20 6 C 20 4.9069372 19.093063 4 18 4 L 14 4 C 14 2.3550302 12.64497 1 11 1 z M 11 3 C 11.56503 3 12 3.4349698 12 4 L 12 6 L 18 6 L 18 12 L 20 12 C 20.56503 12 21 12.43497 21 13 C 21 13.56503 20.56503 14 20 14 L 18 14 L 18 20 L 14 20 C 14 18.35503 12.64497 17 11 17 C 9.3550302 17 8 18.35503 8 20 L 4 20 L 4 16 C 5.6449698 16 7 14.64497 7 13 C 7 11.35503 5.6449698 10 4 10 L 4 6 L 10 6 L 10 4 C 10 3.4349698 10.43497 3 11 3 z" />
+						</svg>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+
+
+		<!-- Experience page -->
+		<div class="wrapper" id="experience">
+			<div class="header text">
+				<h1 class="display-1 title">
+					Experience
+				</h1>
+			</div>
+
+			<div class="container-fluid">
 				<div class="row">
-					<div class="col-sm-12 col-md-7">
-						<h2>Shine a light on the dark side of Spotify</h2>
-						
+					<div class="col-sm-2 col-md-3"></div>
+					<div class="col-sm-8 col-md-6">
+						<div class="question-area">
+							<h2 class="subtitle">Demystify the industry...</h2>
+							<p id="question">We want to get some data on playlists we have created with your Spotify
+								account. Can we access
+								your data through Spotify's Web API?</p>
+							<button id="authorize" class="btn btn-primary" onclick="handleRedirect()">Authorize</button>
+							<p id="playlist"></p>
+							<!-- Answers -->
+							<div id="answers-1" class="answer">
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="question-1" id="true"
+										value="false">
+									<label class="form-check-label" for="true">
+										True
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="question-1" id="false"
+										value="true">
+									<label class="form-check-label" for="false">
+										False
+									</label>
+								</div>
+							</div>
+							<div id="answers-2" class="next-answer">
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="question-2" id="cent"
+										value="false">
+									<label class="form-check-label" for="cent">
+										To be paid at least one cent per stream
+									</label>
+
+
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="question-2" id="model"
+										value="false">
+									<label class="form-check-label" for="model">
+										To adopt a user-centric payment model
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="question-2" id="digital"
+										value="true">
+									<label class="form-check-label" for="digital">
+										To start selling digital albums on Spotify
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="question-2" id="contracts"
+										value="false">
+									<label class="form-check-label" for="contracts">
+										To make all closed-door contracts public
+
+									</label>
+								</div>
+							</div>
+							<div id="answers-3" class="next-answer">
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="question-3" id="sony"
+										value="true">
+									<label class="form-check-label" for="sony">
+										Sony and Universal Music Group
+									</label>
+
+
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="question-3" id="merlin"
+										value="false">
+									<label class="form-check-label" for="merlin">
+										Merlin and Sony
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="question-3" id="warner"
+										value="false">
+									<label class="form-check-label" for="warner">
+										Warner and Sony
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="question-3" id="none"
+										value="false">
+									<label class="form-check-label" for="none">
+										No major record label owns stock in Spotify
+
+									</label>
+								</div>
+							</div>
+							<div id="answers-4" class="next-answer">
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="question-4" id="yes"
+										value="true">
+									<label class="form-check-label" for="yes">
+										True
+									</label>
+
+
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="question-4" id="no"
+										value="false">
+									<label class="form-check-label" for="no">
+										False
+									</label>
+								</div>
+
+							</div>
+							<div>
+								<button class="btn btn-primary" onclick="revealAnswer()"
+									id="reveal-answer">Submit</button>
+								<button class="btn btn-primary" onclick="getNextQuestion()" id="next-question">Next
+									question</button>
+							</div>
+						</div>
+
+						<!-- Progress dots -->
+						<div class="status-bar">
+							<div class="dots">
+								<span class="dot completed"></span>
+								<span id="dot-1" class="dot"></span>
+								<span id="dot-2" class="dot"></span>
+								<span id="dot-3" class="dot"></span>
+								<span id="dot-4" class="dot"></span>
+							</div>
+
+							<button class="btn btn-primary" id="skip" onclick="skipAuthorize()">Skip</button>
+						</div>
+
+					</div>
+
+
+					<div class="col-sm-2 col-md-3"></div>
+
+				</div>
+
+
+			</div>
+		</div>
+
+
+
+		<!-- Introduction page -->
+		<div class="wrapper" id="introduction">
+			<div class="header text">
+				<h1 class="display-1 title">
+					Introduction
+				</h1>
+			</div>
+
+			<div class="container-fluid introduction-body">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12 col-md-7">
+							<h2>Shine a light on the dark side of Spotify</h2>
+
 							<div class="col-sm-12 d-block d-md-none ">
 								<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
 									<div class="carousel-inner">
-									  <div class="carousel-item active ">
+										<div class="carousel-item active ">
 											<div class="col-8 offset-2">
 												<span class="display-1 display-1 stat">84%</span>
-												<p class="caption">of all music revenue comes from streaming services in the U.S.</p>
+												<p class="caption">of all music revenue comes from streaming services in
+													the U.S.</p>
 											</div>
-									  </div>
-									  <div class="carousel-item">
-										<div class="col-8 offset-2">
-											<span class="display-1 stat">1000</span>
-											<p class="caption">artists earned over 1 million dollars from Spotify in 2021</p>
 										</div>
-									  </div>
+										<div class="carousel-item">
+											<div class="col-8 offset-2">
+												<span class="display-1 stat">1000</span>
+												<p class="caption">artists earned over 1 million dollars from Spotify in
+													2021</p>
+											</div>
+										</div>
 									</div>
-									<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+									<a class="carousel-control-prev" href="#carouselExampleControls" role="button"
+										data-bs-slide="prev">
 										<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 										<span class="sr-only"></span>
-									  </a>
-									  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+									</a>
+									<a class="carousel-control-next" href="#carouselExampleControls" role="button"
+										data-bs-slide="next">
 										<span class="carousel-control-next-icon" aria-hidden="true"></span>
 										<span class="sr-only"></span>
 									</a>
 								</div>
 							</div>
-						
-						<p>If you remotely follow music-related news, you probably have seen Spotify criticized for many reasons in the late 2010s. This website brings together information from many sources to make a case against this narrative that Spotify paints: they
-							are the saviors of the music industry. Spotify claims that when piracy was rampant, streaming came in and gave the power back
-							to the musicians. The reality is far from this. They make it as difficult as possible (see <a href="https://www.spotifyunwrapped.org/">this</a>)
-							to gather information that contradicts this. Use this web app as an easy tool to learn and spread the truth about Spotify.
-						</p>
-						<h2>Explore the nuances of the industry</h2>
-						<p>This website is designed to deliver information in a straightforward and engaging fashion. Head over to
-							the Experience page to take an enlightening quiz on the state of the music industry. Visit the Solutions page
-							if you are curious about what actions you can take today to encourage positive change. Or stay here and continue reading
-							to further understand the main issues that Spotify perpetuates.
-						 </p>
-						<h2>Understand the lack of compensation</h2>
-						<p>Spotify ranks last among major streaming platforms in their payout per stream. Small artists that do
-							not have profit from tours and merchandising to lean on rely on their music to keep the lights on. Spotify makes this
-							as difficult as possible, despite advertising themselves as a great place for artists to start their career.
-				
-						</p>
-						<h2>Appreciate the art of albums</h2>
-						<p>With streaming servies, artists receive a payment based on market share of track plays and other factors.
-							This encourages artists to pump out weekly tracks to keep their listener base stimulated with new content
-							and keep streaming numbers up. It no longer makes fiscal sense for an artist reliant on streaming revenue
-							to take time to invest an a longer project. CEO Daniel Elk even went as far as to say that <a href="https://www.nme.com/news/music/spotify-ceo-says-its-not-enough-for-artists-to-release-albums-every-3-4-years-2719272">it is not enough 
-								for artists to only release an album every 3 to 4 years</a>. This is a ridiculous confinement of a longterm artistic project like an LP.
-							Elk's rhetoric yields one result: most artists are no longer willing or able to take the time to create albums that span complicated themes and issues.
-							
-						</p>
-						<h2>Witness Spotify's hypocrisy</h2>
-						<p>Spotify and other streaming services have poured millions of dollars into appealing
-							a 44% raise in mechanical songwriter royalty payments. It is impossible to advertise themselves
-							as a platform supporting artists if they are actively trying to minimize how much they have to shell out
-							to musicians. Instead Spotify treats this like any other company cost: one that should be kept as low as possible.
-						</p>
-						
-						</p>
-						<h2>Read more</h2>
-						<ul>
-							<li><a href="https://blog.hudlmusic.com/songwriters-vs-streaming-services-what-you-need-to-know/#What_Can_You_Do">Hudl Blog</a></li>
-							<li><a href="https://www.unionofmusicians.org/justice-at-spotify">Justice at Spotify</a></li>
-							<li><a href="https://freeyourmusic.com/blog/how-much-does-spotify-pay-per-stream">Free Your Music</a>	</li>
-							<li><a href="https://loudandclear.byspotify.com/">Loud and Clear</a></li>
-						</ul>
-					</div>
-					<div class="col-1"></div>
 
-					<div class="col-md-4 d-none d-md-block statistics">
-						<div class="row">
-							<div class="col-8 offset-2">
-								<span class="display-1 stat">84%</span>
-								<p class="caption">of all music revenue comes from streaming services in the U.S.</p>
-							</div>
+							<p>If you remotely follow music-related news, you probably have seen Spotify criticized for
+								many reasons in the late 2010s. This website brings together information from many
+								sources to make a case against this narrative that Spotify paints: they
+								are the saviors of the music industry. Spotify claims that when piracy was rampant,
+								streaming came in and gave the power back
+								to the musicians. The reality is far from this. They make it as difficult as possible
+								(see <a href="https://www.spotifyunwrapped.org/">this</a>)
+								to gather information that contradicts this. Use this web app as an easy tool to learn
+								and spread the truth about Spotify.
+							</p>
+							<h2>Explore the nuances of the industry</h2>
+							<p>This website is designed to deliver information in a straightforward and engaging
+								fashion. Head over to
+								the Experience page to take an enlightening quiz on the state of the music industry.
+								Visit the Solutions page
+								if you are curious about what actions you can take today to encourage positive change.
+								Or stay here and continue reading
+								to further understand the main issues that Spotify perpetuates.
+							</p>
+							<h2>Understand the lack of compensation</h2>
+							<p>Spotify ranks last among major streaming platforms in their payout per stream. Small
+								artists that do
+								not have profit from tours and merchandising to lean on rely on their music to keep the
+								lights on. Spotify makes this
+								as difficult as possible, despite advertising themselves as a great place for artists to
+								start their career.
+
+							</p>
+							<h2>Appreciate the art of albums</h2>
+							<p>With streaming servies, artists receive a payment based on market share of track plays
+								and other factors.
+								This encourages artists to pump out weekly tracks to keep their listener base stimulated
+								with new content
+								and keep streaming numbers up. It no longer makes fiscal sense for an artist reliant on
+								streaming revenue
+								to take time to invest an a longer project. CEO Daniel Elk even went as far as to say
+								that <a
+									href="https://www.nme.com/news/music/spotify-ceo-says-its-not-enough-for-artists-to-release-albums-every-3-4-years-2719272">it
+									is not enough
+									for artists to only release an album every 3 to 4 years</a>. This is a ridiculous
+								confinement of a longterm artistic project like an LP.
+								Elk's rhetoric yields one result: most artists are no longer willing or able to take the
+								time to create albums that span complicated themes and issues.
+
+							</p>
+							<h2>Witness Spotify's hypocrisy</h2>
+							<p>Spotify and other streaming services have poured millions of dollars into appealing
+								a 44% raise in mechanical songwriter royalty payments. It is impossible to advertise
+								themselves
+								as a platform supporting artists if they are actively trying to minimize how much they
+								have to shell out
+								to musicians. Instead Spotify treats this like any other company cost: one that should
+								be kept as low as possible.
+							</p>
+
+							</p>
+							<h2>Read more</h2>
+							<ul>
+								<li><a
+										href="https://blog.hudlmusic.com/songwriters-vs-streaming-services-what-you-need-to-know/#What_Can_You_Do">Hudl
+										Blog</a></li>
+								<li><a href="https://www.unionofmusicians.org/justice-at-spotify">Justice at Spotify</a>
+								</li>
+								<li><a href="https://freeyourmusic.com/blog/how-much-does-spotify-pay-per-stream">Free
+										Your Music</a> </li>
+								<li><a href="https://loudandclear.byspotify.com/">Loud and Clear</a></li>
+							</ul>
 						</div>
-						<div class="row">
-							<div class="col-8 offset-2">
-								<span class="display-1 stat">1000</span>
-								<p class="caption">artists earned over 1 million dollars from Spotify in 2021</p>
+						<div class="col-1"></div>
+
+						<div class="col-md-4 d-none d-md-block statistics">
+							<div class="row">
+								<div class="col-8 offset-2">
+									<span class="display-1 stat">84%</span>
+									<p class="caption">of all music revenue comes from streaming services in the U.S.
+									</p>
+								</div>
 							</div>
-						</div>
-						<div class="row">
-							<div class="col-8 offset-2">
-								<span class="display-1 stat">5300</span>
-								<p class="caption">artists who earned $10,000 and released their first song in the past 2 years</p>
+							<div class="row">
+								<div class="col-8 offset-2">
+									<span class="display-1 stat">1000</span>
+									<p class="caption">artists earned over 1 million dollars from Spotify in 2021</p>
+								</div>
 							</div>
-						</div>
-						<div class="row">
-							<div class="col-8 offset-2">
-								<span class="display-1 stat">4000</span>
-								<p class="caption">dollars earned per million streams on Spotify</p>
+							<div class="row">
+								<div class="col-8 offset-2">
+									<span class="display-1 stat">5300</span>
+									<p class="caption">artists who earned $10,000 and released their first song in the
+										past 2 years</p>
+								</div>
 							</div>
-						</div>
-						<div class="row">
-							<div class="col-8 offset-2">
-								<span class="display-1 stat">37%</span>
-								<p class="caption">Spotify's cut of money from subscription and ads</p>
+							<div class="row">
+								<div class="col-8 offset-2">
+									<span class="display-1 stat">4000</span>
+									<p class="caption">dollars earned per million streams on Spotify</p>
+								</div>
 							</div>
-						</div>
-						<div class="row">
-							<div class="col-8 offset-2">
-								<span class="display-1 stat">13%</span>
-								<p class="caption">Grubhub's cut for a comparable service</p>
+							<div class="row">
+								<div class="col-8 offset-2">
+									<span class="display-1 stat">37%</span>
+									<p class="caption">Spotify's cut of money from subscription and ads</p>
+								</div>
 							</div>
+							<div class="row">
+								<div class="col-8 offset-2">
+									<span class="display-1 stat">13%</span>
+									<p class="caption">Grubhub's cut for a comparable service</p>
+								</div>
+							</div>
+
 						</div>
-						
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Solution page -->
+		<div class="wrapper" id="solutions">
+			<div class="header text">
+				<h1 class="display-1 title">
+					Solutions
+				</h1>
+			</div>
+
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 col-md-6">
+						<h2>For listeners...</h2>
+						<p>There are many alternatives to using Spotify. Other streaming services, like
+							Tidal, provide higher quality audio and better payout to artists. Websites like
+							<a href="https://bandcamp.com/">Bandcamp</a> let you buy digital albums from many
+							smaller artists.
+						</p>
+						<h2>For everyone...</h2>
+						<p>Support the Union for Musicians and Allied Works <a
+								href="https://www.unionofmusicians.org/">(UMAW)</a>. This organization was created
+							in 2020 when the music industry was faced with the plight of no live touring due to
+							COVID-19.
+
+						</p>
+
+					</div>
+					<div class="col-sm-12 col-md-6">
+						<h2>For artists...</h2>
+						<p>Consider alternatives to streaming services for spreading your music. Social media
+							apps such as Instagram and TikTok allow artists to reach a wide variety of audiences
+							on their own. Be sure to distribute your music on all services, not just Spotify.
+						</p>
+						<p>Consider distributing your music privately. Use the Internet to spread your name, start a
+							Youtube
+							or Twitch channel. Collect ad revenue and reach out to brands to enter a partnership. The
+							most money
+							is in gigs and tours, so use the Internet to your advantage there as well.
+						</p>
 					</div>
 				</div>
 			</div>
-
-		</div>
-	</div>
-
-	<!-- Solution page -->
-	<div class="wrapper" id="solutions">
-		<div class="header text">
-			<h1 class="display-1 title">
-				Solutions
-			</h1>
 		</div>
 
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12 col-md-6">
-					<h2>For listeners...</h2>
-					<p>There are many alternatives to using Spotify. Other streaming services, like
-						Tidal, provide higher quality audio and better payout to artists. Websites like
-						<a href="https://bandcamp.com/">Bandcamp</a> let you buy digital albums from many
-						smaller artists. 
-					</p>
-					<h2>For everyone...</h2>
-					<p>Support the Union for Musicians and Allied Works <a href="https://www.unionofmusicians.org/">(UMAW)</a>. This organization was created
-						in 2020 when the music industry was faced with the plight of no live touring due to COVID-19.
 
-					</p>
-					
-				</div>
-				<div class="col-sm-12 col-md-6">
-					<h2>For artists...</h2>
-					<p>Consider alternatives to streaming services for spreading your music. Social media 
-						apps such as Instagram and TikTok allow artists to reach a wide variety of audiences
-						on their own. Be sure to distribute your music on all services, not just Spotify.
-					</p>
-					<p>Consider distributing your music privately. Use the Internet to spread your name, start a Youtube
-						or Twitch channel. Collect ad revenue and reach out to brands to enter a partnership. The most money
-						is in gigs and tours, so use the Internet to your advantage there as well.
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-	<!-- jquery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<!-- Boostrap JS -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-		crossorigin="anonymous"></script>
-	<!-- Project JS -->
-	<script src="assets/js/main.js"></script>
+		<!-- jquery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- Boostrap JS -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+			crossorigin="anonymous"></script>
+		<!-- Project JS -->
+		<script src="assets/js/main.js"></script>
 
 
 </body>

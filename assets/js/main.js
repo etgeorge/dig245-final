@@ -213,19 +213,31 @@ if (window.location.search.length > 0) {
     handleRedirect();
     loadExperience();
 } else {
-    loadIntroduction();
+    loadLanding();
 }
 
 
 
 //SPA Functions
 
-function loadExperience() {
+function loadLanding() {
     console.log("Page loaded");
+    // hide / show sections
+    $("#landing").show();
+    $("#experience").hide();
+    $("#introduction").hide();
+    $("#solutions").hide();
+    window.history.replaceState(null, null, window.location.pathname);
+}
+
+function loadExperience() {
+    
     // hide / show sections
     $("#experience").show();
     $("#introduction").hide();
     $("#solutions").hide();
+    $("#landing").hide();
+
 }
 
 function loadIntroduction() {
@@ -233,6 +245,8 @@ function loadIntroduction() {
     $("#experience").hide();
     $("#introduction").show();
     $("#solutions").hide();
+    $("#landing").hide();
+
     window.history.replaceState(null, null, window.location.pathname);
 
 }
@@ -242,6 +256,8 @@ function loadSolutions() {
     $("#experience").hide();
     $("#introduction").hide();
     $("#solutions").show();
+    $("#landing").hide();
+
     window.history.replaceState(null, null, window.location.pathname);
 
 
