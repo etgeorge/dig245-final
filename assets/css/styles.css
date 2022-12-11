@@ -92,7 +92,7 @@ body{
 }
 
 .carousel-item{
-    height: 200px;
+    height: 150px;
     width: 100%;
     background-color: #EA526F;
 }
@@ -209,6 +209,7 @@ h1, .stat{
     align-items: center;
     
     justify-content: center;
+    text-align: center;
 }
 #skip{
     height: 50%;
