@@ -9,9 +9,9 @@ const LAST_QUESTION = 4;
 var questionIndex = 0;
 var questionArray = ["Spotify offers a flat rate payout per stream to artists.", "Which answer is NOT a current demand of Spotify from musicians?", "Which major record labels own sizable shares of Spotify stock?", "Spotify's total artist payout has increased each year."];
 var answerArray = ["", `Spotify pays less than a cent per stream. The average payout is $0.004 per stream and depends on the distribution contract each artist has, the country of the listener, and whether the listener is a Free or Premium subscriber. This small number often needs to be divided further by record labels and managers attached to artists.
-`,`Artists are demanding all of the above EXCEPT the sale of digital albums. Artists are not opposed to streaming as a means of music consumption, but demand that rates are about 3x as high as they are now. For artists, it is still a great idea to release digital albums on sites such as Bandcamp to give fans the opportunity to support more directly.`,
-`Sony and UMG still own stock in Spotify. These record labels are set up to succeed either way. If Spotify continues to take a huge cut of subscription and ad revenue, this increases the value of their stock. If Spotify starts to take less money, the record labels get more money from their artist agreements. Either way, their vested interests give them the upper hand over the artists and lets Spotify's treatment of artists run unchecked. `,
-`While this is true, it is not as good as it seems. From 2017 to 2021, artists receiving 1 million dollars rose from 720 to 1040 (44% increase). During this same time, the number of premium subscription users rose from 124 million to 188 million (51% increase). While Spotify boasts about being the first to pay billions of dollars out to rights holders, this can only be expected as their users increase as well. Not to mention that these billions are reaching rights holders, which means music artists are only getting a fraction of this big number.`
+`, `Artists are demanding all of the above EXCEPT the sale of digital albums. Artists are not opposed to streaming as a means of music consumption, but demand that rates are about 3x as high as they are now. For artists, it is still a great idea to release digital albums on sites such as Bandcamp to give fans the opportunity to support more directly.`,
+    `Sony and UMG still own stock in Spotify. These record labels are set up to succeed either way. If Spotify continues to take a huge cut of subscription and ad revenue, this increases the value of their stock. If Spotify starts to take less money, the record labels get more money from their artist agreements. Either way, their vested interests give them the upper hand over the artists and lets Spotify's treatment of artists run unchecked. `,
+    `While this is true, it is not as good as it seems. From 2017 to 2021, artists receiving 1 million dollars rose from 720 to 1040 (44% increase). During this same time, the number of premium subscription users rose from 124 million to 188 million (51% increase). While Spotify boasts about being the first to pay billions of dollars out to rights holders, this can only be expected as their users increase as well. Not to mention that these billions are reaching rights holders, which means music artists are only getting a fraction of this big number.`
 ]
 
 const getAuthorization = (function () {
@@ -102,8 +102,8 @@ function handlePlaylistResponse() {
 }
 
 function displayPlaylistAnswer(playlist, length) {
-    $('#question').text("One of your recent playlists is " + playlist +" which is "+length+
-    " tracks long. This playlist would cost you $"+length*0.99+" to create by purchasing each track individuallly. Compare this to the $10 a month it costs to create an unlimited number of these playlists.");
+    $('#question').text("One of your recent playlists is " + playlist + " which is " + length +
+        " tracks long. This playlist would cost you $" + length * 0.99 + " to create by purchasing each track individuallly. Compare this to the $10 a month it costs to create an unlimited number of these playlists.");
     $('#next-question').show();
     $('#authorize').hide();
 }
@@ -118,73 +118,73 @@ function skipToNextQuestion() {
     var dotSelector = '#dot-' + questionIndex;
     console.log(dotSelector);
     $(dotSelector).addClass("completed");
-    
-    
+
+
 }
 
-function getNextQuestion(){
-    if (questionIndex == LAST_QUESTION){
+function getNextQuestion() {
+    if (questionIndex == LAST_QUESTION) {
         finishQuiz();
-    } else{
+    } else {
         skipToNextQuestion();
         reverseColors();
-        
+
 
     }
-    
+
 }
 
-function finishQuiz(){
+function finishQuiz() {
     reverseColors();
     $("#next-question").hide("fade");
     document.getElementById("question").innerText = "Explore other pages for more information!"
 }
 
-function animateColors(){
+function animateColors() {
     $("#next-question").addClass("pink-to-purple");
     $(".completed").addClass("pink-to-purple")
-    var questionSelector = 'input[name="question-'+questionIndex+'"]:checked';
+    var questionSelector = 'input[name="question-' + questionIndex + '"]:checked';
     let result = document.querySelector(questionSelector).value;
-    
-    if(result == "true"){
+
+    if (result == "true") {
         $("body").addClass("correct")
-    } else{
+    } else {
         $("body").addClass("incorrect")
 
     }
-    
+
 }
 
-function reverseColors(){
+function reverseColors() {
     $("#next-question").removeClass("pink-to-purple");
     $(".completed").removeClass("pink-to-purple")
     $("body").removeClass("correct");
     $("body").removeClass("incorrect");
 }
 
-function getNextAnswer(){
-    let answerSelector="#answers-"+questionIndex;
+function getNextAnswer() {
+    let answerSelector = "#answers-" + questionIndex;
     console.log(answerSelector);
     $(answerSelector).show("fade");
     $("#playlist").hide("fade");
 }
 
 function revealAnswer() {
-    var questionSelector = 'input[name="question-'+questionIndex+'"]:checked';
+    var questionSelector = 'input[name="question-' + questionIndex + '"]:checked';
     let result = document.querySelector(questionSelector).value;
-    let answerSelector="#answers-"+questionIndex;
+    let answerSelector = "#answers-" + questionIndex;
     $(answerSelector).hide("fade");
-    
+
     var answer;
-    if (result=="true"){
+    if (result == "true") {
         answer = "Correct! "
-    } else{
+    } else {
         answer = "Close! "
     }
-    answer+=answerArray[questionIndex];
-    result= null;
+    answer += answerArray[questionIndex];
+    result = null;
     document.getElementById("question").innerText = answer;
-    
+
     //DOM manipulation
     $('#reveal-answer').hide();
     $("#next-question").show();
@@ -197,16 +197,16 @@ function revealAnswer() {
 function skipAuthorize() {
     console.log("skip called");
     $("#authorize").hide("fade");
-    let answerSelector="#answers-"+questionIndex;
+    let answerSelector = "#answers-" + questionIndex;
     $(answerSelector).hide("fade");
-    if(questionIndex == LAST_QUESTION){
+    if (questionIndex == LAST_QUESTION) {
         finishQuiz();
         $("#reveal-answer").hide("fade");
         $("#skip").hide("fade");
-    } else{
+    } else {
         skipToNextQuestion();
     }
-    
+
 }
 
 if (window.location.search.length > 0) {
@@ -231,7 +231,7 @@ function loadLanding() {
 }
 
 function loadExperience() {
-    
+
     // hide / show sections
     $("#experience").show();
     $("#introduction").hide();

@@ -1,12 +1,12 @@
-
 /* css */
-body{
+body {
     background-color: #2E294E;
     font-family: 'Lato', sans-serif;
     color: #FAF9F6;
-    
+
 }
-.top-nav{
+
+.top-nav {
     background-color: #FAF9F6;
     width: 100%;
     height: 50px;
@@ -15,176 +15,221 @@ body{
     display: flex;
     justify-content: end;
     z-index: 99;
-    
-    
+
+
 }
-.tab{
+
+.tab {
     height: 460px;
     width: 100%;
 }
-.statistics{
+
+.statistics {
     background-color: #EA526F;
 }
 
-.top-nav a{
+.top-nav a {
     color: white;
     margin: 15px;
 }
 
-.top-nav a:active{
+.top-nav a:active {
     background-color: aliceblue;
 }
 
-#reveal-answer,#answers-1{
+#reveal-answer,
+#answers-1 {
     display: none;
 }
 
-@keyframes purp{
-    from{background-color: #2E294E;}
-    to{background-color: #EA526F;}
+@keyframes purp {
+    from {
+        background-color: #2E294E;
+    }
+
+    to {
+        background-color: #EA526F;
+    }
 }
 
-@keyframes correct{
-    from{background-color: #2E294E;}
-    to{background-color: green;}
+@keyframes correct {
+    from {
+        background-color: #2E294E;
+    }
+
+    to {
+        background-color: green;
+    }
 }
 
-@keyframes incorrect{
-    from{background-color: #2E294E;}
-    to{background-color: red;}
+@keyframes incorrect {
+    from {
+        background-color: #2E294E;
+    }
+
+    to {
+        background-color: red;
+    }
 }
 
-@keyframes pnk{
-    from{background-color: #EA526F;
+@keyframes pnk {
+    from {
+        background-color: #EA526F;
         border-color: #EA526F;
     }
-    to{background-color: #2E294E;
-    border-color: #2E294E;}  
-    
+
+    to {
+        background-color: #2E294E;
+        border-color: #2E294E;
+    }
+
 }
 
-.correct{
+.correct {
     animation-name: correct;
     animation-duration: 1s;
     animation-fill-mode: forwards;
 }
 
-.incorrect{
+.incorrect {
     animation-name: incorrect;
     animation-duration: 1s;
     animation-fill-mode: forwards;
 }
-.purple-to-pink{
+
+.purple-to-pink {
     animation-name: purp;
     animation-duration: 1s;
     animation-fill-mode: forwards;
 }
 
-.pink-to-purple{
+.pink-to-purple {
     animation-name: pnk;
     animation-duration: 1s;
     animation-fill-mode: forwards;
 }
 
-.empty-space{
+.empty-space {
     height: 50px;
     width: 100%;
 }
 
-.carousel-item{
+.carousel-item {
     height: 150px;
     width: 100%;
     background-color: #EA526F;
 }
 
-.large{
+.large {
     height: 175px;
 }
-.title{
+
+.title {
     margin: 15px;
     z-index: 100;
 }
-.icon{
+
+.icon {
     fill: #EA526F;
     display: flex;
     justify-content: center;
 }
 
-h2, h3{
+h2,
+h3 {
     margin: 15px 0;
 }
-#reveal-answer, #next-question, #question, .dots, #authorize{
+
+#reveal-answer,
+#next-question,
+#question,
+.dots,
+#authorize {
     margin: 15px;
 }
-.header{
+
+.header {
     width: 100%;
     background-color: #FAF9F6;
     display: flex;
     color: #2E294E;
 }
 
-a{
+a {
     color: #EA526F;
 }
-a:hover{
+
+a:hover {
     color: #dA425F;
 }
 
-.image{
+.image {
     height: 400px;
     justify-content: center;
     align-items: center;
 }
-.text{
+
+.text {
     height: 100px;
     align-items: end;
-    
+
 }
 
-h1, .stat{
+h1,
+.stat {
     font-weight: 900;
-    
+
 }
-.btn-primary{
+
+.btn-primary {
     background-color: #EA526F;
     color: #FAF9F6;
     border-color: #EA526F;
 }
 
-.btn-primary:hover{
+.btn-primary:hover {
     background-color: #dA425F;
     border-color: #dA425F;
 }
-.answer,.next-answer, .subtitle{
+
+.answer,
+.next-answer,
+.subtitle {
     margin: 15px;
 }
 
 
-#next-question,.next-answer{
+#next-question,
+.next-answer {
     display: none;
 }
 
-.offcanvas{
+.offcanvas {
     background-color: #FAF9F6;
 }
 
-.display-3{
+.display-3 {
     text-align: center;
 }
 
-.experience-btn, .introduction-btn, .solutions-btn{
+.experience-btn,
+.introduction-btn,
+.solutions-btn {
     height: 150px;
     width: 100%;
     font-size: 36px;
     color: #2E294E;
 }
-.experience-btn:hover, .introduction-btn:hover, .solutions-btn:hover{
+
+.experience-btn:hover,
+.introduction-btn:hover,
+.solutions-btn:hover {
     background-color: #EA526F;
     border-color: #EA526F;
-    
+
 }
 
-.offcanvas-body{
+.offcanvas-body {
     padding: 0;
 }
 
@@ -194,38 +239,41 @@ h1, .stat{
     background-color: #FAF9F6;
     border-radius: 50%;
     display: inline-block;
-  }
+}
 
-.completed{
+.completed {
     background-color: #EA526F;
 }
 
-.landing-card{
+.landing-card {
     margin: 120px 0px;
-    
+
 }
-.centered{
+
+.centered {
     display: flex;
     align-items: center;
-    
+
     justify-content: center;
     text-align: center;
 }
-#skip{
+
+#skip {
     height: 50%;
-    
+
 }
-.question-area{
+
+.question-area {
     height: 300px;
 }
 
-.status-bar{
+.status-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.caption{
+
+.caption {
     margin-top: -10px;
     width: 100%;
 }
-
