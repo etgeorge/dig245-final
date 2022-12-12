@@ -104,7 +104,7 @@ function handlePlaylistResponse() {
 function displayPlaylistAnswer(playlist, length) {
     var htmlString = `
     <p id="question">One of your recent playlists is <b>` + playlist + `</b> which is <b>` + length +
-    `</b> tracks long. This playlist would cost you <b>$` + length * 0.99 + `</b> to create by purchasing each track individually. Compare this to the $10 a month it costs to create an unlimited number of these playlists.</p>
+    `</b> tracks long. This playlist would cost you <b>$` + length * 0.99 + `</b> to create by purchasing each track individually. Compare this to the <b>$10</b> a month it costs to create an unlimited number of these playlists.</p>
     `
     $("#question-container").html(htmlString);
     $('#next-question').show();
@@ -262,8 +262,6 @@ function loadSolutions() {
     $("#landing").hide();
 
     window.history.replaceState(null, null, window.location.pathname);
-
-
 }
 $(document).on("click", ".experience-btn", loadExperience);
 $(document).on("click", ".introduction-btn", loadIntroduction);

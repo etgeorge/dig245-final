@@ -15,8 +15,6 @@ body {
     display: flex;
     justify-content: end;
     z-index: 99;
-
-
 }
 
 .tab {
