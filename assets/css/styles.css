@@ -3,7 +3,6 @@ body {
     background-color: #2E294E;
     font-family: 'Lato', sans-serif;
     color: #FAF9F6;
-
 }
 
 .top-nav {
@@ -143,7 +142,6 @@ h3, .margin {
 #question,
 #quiz-done,
 .dots,
-
 #authorize {
     margin: 15px;
 }
