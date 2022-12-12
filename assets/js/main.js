@@ -104,11 +104,9 @@ function handlePlaylistResponse() {
 function displayPlaylistAnswer(playlist, length) {
     var htmlString = `
     <p id="question">One of your recent playlists is <b>` + playlist + `</b> which is <b>` + length +
-    `</b> tracks long. This playlist would cost you <b>$` + length * 0.99 + `</b> to create by purchasing each track individuallly. Compare this to the $10 a month it costs to create an unlimited number of these playlists.</p>
+    `</b> tracks long. This playlist would cost you <b>$` + length * 0.99 + `</b> to create by purchasing each track individually. Compare this to the $10 a month it costs to create an unlimited number of these playlists.</p>
     `
     $("#question-container").html(htmlString);
-    // $('#question').text("One of your recent playlists is " + playlist + " which is " + length +
-    //     " tracks long. This playlist would cost you $" + length * 0.99 + " to create by purchasing each track individuallly. Compare this to the $10 a month it costs to create an unlimited number of these playlists.");
     $('#next-question').show();
     $('#authorize').hide();
 }
