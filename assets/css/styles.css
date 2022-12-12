@@ -36,7 +36,7 @@ body {
 }
 
 #reveal-answer,
-#answers-1 {
+#answers-1, #quiz-done {
     display: none;
 }
 
@@ -141,6 +141,7 @@ h3 {
 #reveal-answer,
 #next-question,
 #question,
+#quiz-done,
 .dots,
 #authorize {
     margin: 15px;

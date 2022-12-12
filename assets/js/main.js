@@ -141,6 +141,7 @@ function finishQuiz() {
     reverseColors();
     $("#next-question").hide("fade");
     document.getElementById("question").innerText = "Explore other pages for more information!"
+    $("#quiz-done").show();
 }
 
 function animateColors() {
