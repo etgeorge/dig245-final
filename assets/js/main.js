@@ -89,8 +89,7 @@ function fetchPlaylistApi(body) {
 }
 
 function handlePlaylistResponse() {
-    //issue with this line
-    var data = JSON.parse(this.responseText);
+    var data = JSON.parse(JSON.stringify(this.responseText));
     var firstPlaylist = data.items[2].name;
     var firstPlaylistLength = data.items[2].tracks.total;
     console.log(data);
